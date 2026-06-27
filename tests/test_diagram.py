@@ -1,0 +1,229 @@
+"""Tests for the diagram file parser/writer."""
+
+import pytest
+
+from parts_of_thought.diagram import (
+    Label,
+    TokenAnnotation,
+    merge_passes,
+    parse_metadata,
+    parse_pass,
+    write_pass,
+    write_tokens,
+)
+
+
+# -- Label --
+
+class TestLabel:
+    def test_leaf_label(self):
+        label = Label(name="DET")
+        assert label.is_leaf
+        assert label.to_line() == "DET"
+
+    def test_linking_label(self):
+        label = Label(name="NOUN_PHRASE", child_prev="DET",
+                      child_curr="NOUN", index_prev=0)
+        assert not label.is_leaf
+        assert label.to_line() == "NOUN_PHRASE DET NOUN 0"
+
+    def test_label_with_parameter(self):
+        label = Label(name="NP", child_prev="DET", child_curr="NOUN",
+                      index_prev=0, parameter=2)
+        assert label.to_line() == "NP DET NOUN 0 2"
+
+    def test_label_with_weight(self):
+        label = Label(name="NP", child_prev="DET", child_curr="NOUN",
+                      index_prev=0, parameter=0, weight=0.8)
+        assert label.to_line() == "NP DET NOUN 0 0 0.8"
+
+    def test_leaf_defaults(self):
+        label = Label(name="VERB")
+        assert label.parameter == 0
+        assert label.weight == 1.0
+
+
+# -- parse_pass --
+
+SIMPLE_PASS = """\
+# source: test
+
+0 The
+  DET
+1 cat
+  NOUN
+  NOUN_PHRASE DET NOUN 0
+2 sat
+  VERB
+3 .
+  PUNCT
+"""
+
+
+class TestParsing:
+    def test_simple_pass(self):
+        result = parse_pass(SIMPLE_PASS)
+        assert len(result) == 4
+        assert result[0].index == 0
+        assert result[0].token == "The"
+        assert len(result[0].labels) == 1
+        assert result[0].labels[0] == Label(name="DET")
+
+    def test_multiple_labels(self):
+        result = parse_pass(SIMPLE_PASS)
+        cat = result[1]
+        assert cat.token == "cat"
+        assert len(cat.labels) == 2
+        assert cat.labels[0] == Label(name="NOUN")
+        assert cat.labels[1] == Label(
+            name="NOUN_PHRASE", child_prev="DET",
+            child_curr="NOUN", index_prev=0
+        )
+
+    def test_linking_label_fields(self):
+        result = parse_pass(SIMPLE_PASS)
+        np_label = result[1].labels[1]
+        assert np_label.name == "NOUN_PHRASE"
+        assert np_label.child_prev == "DET"
+        assert np_label.child_curr == "NOUN"
+        assert np_label.index_prev == 0
+        assert not np_label.is_leaf
+
+    def test_blank_lines_ignored(self):
+        text = "0 The\n\n  DET\n\n1 cat\n  NOUN\n"
+        result = parse_pass(text)
+        assert len(result) == 2
+
+    def test_comments_ignored(self):
+        text = "# comment\n0 The\n  DET\n# another comment\n1 cat\n"
+        result = parse_pass(text)
+        assert len(result) == 2
+        assert result[0].labels[0].name == "DET"
+
+    def test_token_no_labels(self):
+        text = "0 The\n1 cat\n  NOUN\n"
+        result = parse_pass(text)
+        assert len(result) == 2
+        assert result[0].labels == []
+        assert len(result[1].labels) == 1
+
+    def test_label_with_parameter_and_weight(self):
+        text = "0 The\n  DET\n1 cat\n  NP DET NOUN 0 1 0.75\n"
+        result = parse_pass(text)
+        label = result[1].labels[0]
+        assert label.parameter == 1
+        assert label.weight == 0.75
+
+    def test_bad_label_fields(self):
+        text = "0 The\n  NP DET NOUN\n"
+        with pytest.raises(ValueError, match="4 fields"):
+            parse_pass(text)
+
+    def test_label_before_token(self):
+        text = "  DET\n0 The\n"
+        with pytest.raises(ValueError, match="before any token"):
+            parse_pass(text)
+
+    def test_punctuation_token(self):
+        text = '0 .\n  PUNCT\n1 !\n  PUNCT\n2 ?\n  PUNCT\n'
+        result = parse_pass(text)
+        assert result[0].token == "."
+        assert result[1].token == "!"
+        assert result[2].token == "?"
+
+
+# -- parse_metadata --
+
+class TestMetadata:
+    def test_metadata_extraction(self):
+        text = "# source: mcguffey_primer\n# pass: 01\n0 The\n"
+        meta = parse_metadata(text)
+        assert meta == {"source": "mcguffey_primer", "pass": "01"}
+
+    def test_plain_comments_skipped(self):
+        text = "# just a comment\n# key: value\n"
+        meta = parse_metadata(text)
+        assert meta == {"key": "value"}
+
+    def test_empty(self):
+        assert parse_metadata("") == {}
+
+
+# -- write_pass --
+
+class TestWriting:
+    def test_round_trip(self):
+        original = parse_pass(SIMPLE_PASS)
+        output = write_pass(original)
+        reparsed = parse_pass(output)
+
+        assert len(reparsed) == len(original)
+        for orig, reparse in zip(original, reparsed):
+            assert orig.index == reparse.index
+            assert orig.token == reparse.token
+            assert orig.labels == reparse.labels
+
+    def test_write_with_metadata(self):
+        anns = [TokenAnnotation(index=0, token="The", labels=[Label("DET")])]
+        output = write_pass(anns, metadata={"pass": "01"})
+        assert output.startswith("# pass: 01\n")
+        assert "0 The\n  DET\n" in output
+
+    def test_write_tokens_only(self):
+        anns = [
+            TokenAnnotation(index=0, token="The"),
+            TokenAnnotation(index=1, token="cat"),
+        ]
+        output = write_tokens(anns)
+        assert output == "0 The\n1 cat\n"
+
+
+# -- merge_passes --
+
+PASS_A = """\
+0 The
+  DET
+1 cat
+  NOUN
+2 sat
+  VERB
+"""
+
+PASS_B = """\
+0 The
+1 cat
+  AGENT
+2 sat
+  ACT-ON AGENT VERB 1
+"""
+
+
+class TestMerge:
+    def test_merge_two_passes(self):
+        a = parse_pass(PASS_A)
+        b = parse_pass(PASS_B)
+        merged = merge_passes([a, b])
+
+        assert len(merged) == 3
+        assert merged[0].labels == [Label("DET")]
+        assert merged[1].labels == [Label("NOUN"), Label("AGENT")]
+        assert len(merged[2].labels) == 2
+        assert merged[2].labels[0] == Label("VERB")
+        assert merged[2].labels[1] == Label(
+            "ACT-ON", child_prev="AGENT", child_curr="VERB", index_prev=1
+        )
+
+    def test_merge_token_mismatch(self):
+        a = parse_pass("0 The\n1 cat\n")
+        b = parse_pass("0 The\n1 dog\n")
+        with pytest.raises(ValueError, match="Token mismatch"):
+            merge_passes([a, b])
+
+    def test_merge_length_mismatch(self):
+        a = parse_pass("0 The\n1 cat\n")
+        b = parse_pass("0 The\n")
+        with pytest.raises(ValueError, match="tokens"):
+            merge_passes([a, b])
+
+    def test_merge_empty(self):
+        assert merge_passes([]) == []

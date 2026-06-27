@@ -1,0 +1,77 @@
+# source: data/early_reader/sentences/mcguffey_primer.txt
+# sentences: 1-10
+
+# --- 1. A cat and a rat. ---
+0 A
+1 cat
+2 and
+3 a
+4 rat
+5 .
+
+# --- 2. A rat and a cat. ---
+6 A
+7 rat
+8 and
+9 a
+10 cat
+11 .
+
+# --- 3. The cat has a rat. ---
+12 The
+13 cat
+14 has
+15 a
+16 rat
+17 .
+
+# --- 4. The rat ran at Ann. ---
+18 The
+19 rat
+20 ran
+21 at
+22 Ann
+23 .
+
+# --- 5. Ann has a cat. ---
+24 Ann
+25 has
+26 a
+27 cat
+28 .
+
+# --- 6. The cat ran at the rat. ---
+29 The
+30 cat
+31 ran
+32 at
+33 the
+34 rat
+35 .
+
+# --- 7. Ann and Nat. ---
+36 Ann
+37 and
+38 Nat
+39 .
+
+# --- 8. Ann has a fan. ---
+40 Ann
+41 has
+42 a
+43 fan
+44 .
+
+# --- 9. Nat has a hat. ---
+45 Nat
+46 has
+47 a
+48 hat
+49 .
+
+# --- 10. Ann can fan Nat. ---
+50 Ann
+51 can
+52 fan
+53 Nat
+54 .

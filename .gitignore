@@ -1,2 +1,3 @@
 *.pdf
 component_library
+__pycache__

@@ -1,0 +1,258 @@
+# Reed-Kellogg Sentence Diagram Ontology
+#
+# Parts of Thought labels derived from Reed & Kellogg's
+# "Higher Lessons in English" (1877) and "Graded Lessons in English" (1896).
+#
+# Each label has:
+#   name:        the label identifier
+#   description: what it means (prose, may informally reference other labels)
+#   source:      where the definition comes from
+#
+# This is a dictionary, not a grammar. It does not constrain which labels
+# can parent which. See planning/ontology_design.md.
+
+# ============================================================
+# Parts of Speech (leaf labels — tag the token directly)
+# ============================================================
+
+NOUN:
+  description: >
+    The name of anything. "Whatever you can think of as having an
+    existence, whether it be a person, an animal, a place, a thing,
+    or a quality, is named by a noun."
+  source: Reed & Kellogg, Higher Lessons in English
+
+PRONOUN:
+  description: >
+    A word used for a noun. Stands in place of a noun to avoid
+    repetition. Includes personal (I, you, he), relative (who, which,
+    that), interrogative (who?, what?), and demonstrative (this, that).
+  source: Reed & Kellogg, Higher Lessons in English
+
+VERB:
+  description: >
+    A word that asserts action, being, or state of being. The core
+    of the predicate.
+  source: Reed & Kellogg, Higher Lessons in English
+
+ADJECTIVE:
+  description: >
+    A word used to modify a noun or a pronoun. Expresses quality
+    (ripe, cold, beautiful), points out (the, this, that), or
+    specifies number (five, some, many, all).
+  source: Reed & Kellogg, Higher Lessons in English
+
+ADVERB:
+  description: >
+    A word used to modify a verb, an adjective, or another adverb.
+    Tells manner (quietly), time (now, early), place (here, there),
+    or degree (very, almost, quite).
+  source: Reed & Kellogg, Higher Lessons in English
+
+PREPOSITION:
+  description: >
+    A word that introduces a phrase modifier, showing the relation
+    of a noun or pronoun to some other word. Examples: of, to, at,
+    by, in, on, from, with, for.
+  source: Reed & Kellogg, Higher Lessons in English
+
+CONJUNCTION:
+  description: >
+    A word used to connect words, phrases, or clauses. Coordinating
+    (and, but, or) or subordinating (if, when, because, that).
+  source: Reed & Kellogg, Higher Lessons in English
+
+INTERJECTION:
+  description: >
+    A word used to express strong or sudden feeling. Grammatically
+    independent of the sentence. Examples: Oh!, Ah!, Alas!
+  source: Reed & Kellogg, Higher Lessons in English
+
+ARTICLE:
+  description: >
+    A determiner that specifies definiteness. "The" (definite) or
+    "a"/"an" (indefinite). Reed & Kellogg classify these as
+    adjectives, but they are distinguished here for annotation
+    clarity.
+  source: Reed & Kellogg (classified under adjective)
+
+# ============================================================
+# Sentence elements (linking labels — connect other labels)
+# ============================================================
+
+SUBJECT:
+  description: >
+    Names that of which something is thought. The subject with all
+    its modifiers is the modified (or logical) subject.
+  source: Reed & Kellogg, Higher Lessons in English
+
+PREDICATE:
+  description: >
+    Tells what is thought of the subject. The predicate with all
+    its modifiers and complements is the modified (or logical)
+    predicate.
+  source: Reed & Kellogg, Higher Lessons in English
+
+OBJECT_COMPLEMENT:
+  description: >
+    Completes the predicate and names the receiver of the act.
+    What modern grammar calls the direct object. "Whatever fills
+    out, or completes, is a Complement."
+  source: Reed & Kellogg, Higher Lessons in English
+
+ATTRIBUTE_COMPLEMENT:
+  description: >
+    Completes the predicate and presents a quality or class
+    asserted of the subject. Follows a linking verb (is, seems,
+    became). Includes what modern grammar calls the predicate
+    nominative (noun) and predicate adjective (adjective).
+  source: Reed & Kellogg, Higher Lessons in English
+
+OBJECTIVE_COMPLEMENT:
+  description: >
+    Completes the predicate and belongs to the object complement.
+    Describes the result of the action on the object. "They crowned
+    him king" — king is the objective complement of him.
+  source: Reed & Kellogg, Higher Lessons in English
+
+INDIRECT_OBJECT:
+  description: >
+    Names the person or thing to or for whom the action is done.
+    "Give me the book" — me is the indirect object. Precedes the
+    direct object without a preposition.
+  source: Reed & Kellogg, Higher Lessons in English
+
+# ============================================================
+# Modifiers (linking labels)
+# ============================================================
+
+MODIFIER:
+  description: >
+    A word or group of words joined to some part of the sentence
+    to qualify or limit its meaning.
+  source: Reed & Kellogg, Higher Lessons in English
+
+ADJECTIVE_MODIFIER:
+  description: >
+    A modifier that functions as an adjective — modifies a noun
+    or pronoun. May be a single adjective, a phrase, or a clause.
+  source: Reed & Kellogg, Higher Lessons in English
+
+ADVERB_MODIFIER:
+  description: >
+    A modifier that functions as an adverb — modifies a verb,
+    adjective, or another adverb. May be a single adverb, a phrase,
+    or a clause.
+  source: Reed & Kellogg, Higher Lessons in English
+
+# ============================================================
+# Phrases (linking labels)
+# ============================================================
+
+PREPOSITIONAL_PHRASE:
+  description: >
+    A group of related words introduced by a preposition. Contains
+    the preposition, its object (a noun or pronoun), and any
+    modifiers of that object. Functions as either an adjective
+    phrase or an adverb phrase.
+  source: Reed & Kellogg, Higher Lessons in English
+
+VERB_PHRASE:
+  description: >
+    Two or more words that together do the work of a single verb.
+    The auxiliary verb(s) plus the main verb. "Is learning,"
+    "may be learned," "could have been learning."
+  source: Reed & Kellogg, Higher Lessons in English
+
+# ============================================================
+# Compound structures (linking labels)
+# ============================================================
+
+COMPOUND:
+  description: >
+    Two or more elements of the same kind connected by a
+    conjunction (expressed or understood). Applies to compound
+    subjects, compound predicates, compound complements, and
+    compound phrases.
+  source: Reed & Kellogg, Higher Lessons in English
+
+# ============================================================
+# Clauses (linking labels)
+# ============================================================
+
+CLAUSE:
+  description: >
+    A part of a sentence containing a subject and a predicate.
+  source: Reed & Kellogg, Higher Lessons in English
+
+INDEPENDENT_CLAUSE:
+  description: >
+    A clause not dependent on another clause. Can stand alone as
+    a sentence.
+  source: Reed & Kellogg, Higher Lessons in English
+
+DEPENDENT_CLAUSE:
+  description: >
+    A clause used as an adjective, an adverb, or a noun. Cannot
+    stand alone as a sentence.
+  source: Reed & Kellogg, Higher Lessons in English
+
+# ============================================================
+# Sentence types (linking labels)
+# ============================================================
+
+SENTENCE:
+  description: >
+    The expression of a thought in words.
+  source: Reed & Kellogg, Higher Lessons in English
+
+DECLARATIVE:
+  description: >
+    A sentence used to affirm or to deny.
+  source: Reed & Kellogg, Higher Lessons in English
+
+INTERROGATIVE:
+  description: >
+    A sentence that expresses a question.
+  source: Reed & Kellogg, Higher Lessons in English
+
+IMPERATIVE:
+  description: >
+    A sentence that expresses a command or a request.
+  source: Reed & Kellogg, Higher Lessons in English
+
+EXCLAMATORY:
+  description: >
+    A sentence that expresses sudden thought or strong feeling.
+  source: Reed & Kellogg, Higher Lessons in English
+
+# ============================================================
+# Sentence complexity (linking labels)
+# ============================================================
+
+SIMPLE_SENTENCE:
+  description: >
+    A sentence that contains but one subject and one predicate,
+    either or both of which may be compound.
+  source: Reed & Kellogg, Higher Lessons in English
+
+COMPLEX_SENTENCE:
+  description: >
+    A sentence composed of an independent clause and one or more
+    dependent clauses.
+  source: Reed & Kellogg, Higher Lessons in English
+
+COMPOUND_SENTENCE:
+  description: >
+    A sentence composed of two or more independent clauses.
+  source: Reed & Kellogg, Higher Lessons in English
+
+# ============================================================
+# Punctuation (leaf labels)
+# ============================================================
+
+PUNCT:
+  description: >
+    A punctuation mark. Period, comma, question mark, exclamation
+    point, semicolon, colon, dash, quotation marks, etc.
+  source: General convention
