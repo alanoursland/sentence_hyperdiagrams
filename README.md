@@ -14,8 +14,13 @@ By chaining labels that reference other labels, the system builds
 relationships between relationships — from surface syntax up through semantic
 roles, coreference, and discourse structure — all with the same mechanism.
 
-The label ontology is hand-crafted from classical linguistics and knowledge
-representation research. No machine learning. No statistical inference.
+The label ontology is called **Parts of Thought** — a single type hierarchy
+of relation names where semantics is syntax, refined. AGENT is a kind of
+NOUN_PHRASE. ACT-ON is a kind of VERB. The same hierarchy works for both
+analysis (decomposing text) and generation (composing text).
+
+Hand-crafted from classical linguistics and knowledge representation
+research. No machine learning. No statistical inference.
 
 ## Project structure
 

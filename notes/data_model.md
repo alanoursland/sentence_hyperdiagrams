@@ -1,5 +1,9 @@
 # Sentence Hyperdiagrams - Data Model
 
+The label ontology is called **Parts of Thought** — a single type hierarchy
+of relation names, analogous to "Parts of Speech" but covering all levels
+from surface syntax through deep semantics.
+
 ## Overview
 
 A sentence hyperdiagram builds tree structures over a sequence of tokens by
@@ -12,8 +16,26 @@ NLP and linguistics.
 
 ## Scope
 
-The tree structure is not limited to syntax and grammar. Labels cover multiple
-linguistic levels:
+There is only one kind of thing in the system: **relations**. Traditional
+linguistic distinctions — parts of speech, constituents, semantic roles —
+are not separate annotation layers. They are all label names at different
+levels of specificity in a single type hierarchy.
+
+- A **part of speech** (NOUN, VERB, DET) is a leaf label — a relation
+  with no children (the token itself).
+- A **constituent** (NOUN_PHRASE, VERB_PHRASE) is a label that relates
+  other labels — e.g., NOUN_PHRASE links DETERMINER to NOUN.
+- A **semantic role** (AGENT, PATIENT, INSTRUMENT) is a *subtype* of a
+  constituent — AGENT is a kind of NOUN_PHRASE that fills the doer role.
+- A **semantic verb type** (ACT-ON, MOVE, TRANSFER) is a *subtype* of
+  VERB that defines what kinds of arguments it connects — e.g., ACT-ON
+  relates an AGENT to a PATIENT.
+
+Semantics is not layered on top of syntax. Semantics *is* syntax, refined.
+Choosing a more specific label name simultaneously encodes syntactic
+category and semantic role.
+
+The label name hierarchy covers:
 
 - **Morphology** — internal word structure
 - **Syntax** — phrase structure, constituency, dependency
@@ -21,9 +43,8 @@ linguistic levels:
 - **Long-distance relationships** — coreference, binding, filler-gap
   dependencies, discourse relations
 
-The same label mechanism spans all of these levels. Higher-level labels
-(semantic, discourse) build on top of lower-level ones (syntactic) by
-referencing them as children — relationships between relationships.
+All using the same label mechanism — there is no point where the system
+switches from "syntactic annotation" to "semantic annotation."
 
 ## Tokens
 

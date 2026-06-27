@@ -1,7 +1,7 @@
 # The Component Library (CLib)
 
-The sentence hyperdiagram project builds much of its semantic label ontology
-on the Component Library (CLib) developed by Bruce Porter's group at UT Austin.
+The **Parts of Thought** ontology builds much of its label hierarchy on the
+Component Library (CLib) developed by Bruce Porter's group at UT Austin.
 
 **Source page:** https://www.cs.utexas.edu/~mfkb/RKF/clib.html
 

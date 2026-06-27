@@ -22,6 +22,21 @@ A syntactic label links tokens. A semantic label links syntactic labels. A
 discourse label links semantic labels. The result is not one tree but a
 layered structure of relationships between relationships.
 
+## Parts of Thought
+
+The label ontology is called **Parts of Thought** — analogous to "Parts of
+Speech" but for structure at every level. Just as Parts of Speech are the
+finite set of categories for what a word *is*, Parts of Thought are the
+finite set of categories for what a relationship *is*.
+
+The hierarchy is a single tree where more specific names refine more general
+ones. Semantics is not layered on top of syntax — it *is* syntax, refined.
+AGENT is a kind of NOUN_PHRASE. ACT-ON is a kind of VERB. Choosing a more
+specific label simultaneously encodes syntactic category and semantic role.
+
+The same hierarchy works for both analysis (decomposing text into parts of
+thought) and generation (composing parts of thought into text).
+
 ## The label mechanism
 
 Every annotation is a **label** — a tuple attached to a single token:
