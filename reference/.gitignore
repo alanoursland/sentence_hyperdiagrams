@@ -1,0 +1,5 @@
+# Don't commit downloaded papers/books
+*.pdf
+*.djvu
+*.epub
+*.mobi
