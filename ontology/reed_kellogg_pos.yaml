@@ -21,6 +21,8 @@ he:
   - PRONOUN
 "?":
   - PUNCT
+was:
+  - VERB
 you:
   - PRONOUN
 it:
@@ -31,7 +33,11 @@ in:
   - PREPOSITION
 of:
   - PREPOSITION
+is:
+  - VERB
 i:
+  - PRONOUN
+his:
   - PRONOUN
 not:
   - ADVERB
@@ -42,7 +48,9 @@ what:
   - INTERJECTION: 0.3
 she:
   - PRONOUN
-on:
+will:
+  - VERB
+"on":
   - PREPOSITION
 that:
   - PRONOUN: 0.5
@@ -51,21 +59,39 @@ at:
   - PREPOSITION
 with:
   - PREPOSITION
+do:
+  - VERB
+see:
+  - VERB
 but:
   - CONJUNCTION
 for:
   - PREPOSITION: 0.7
   - CONJUNCTION: 0.3
+had:
+  - VERB
 all:
   - ADJECTIVE: 0.5
   - PRONOUN: 0.3
   - ADVERB: 0.2
+little:
+  - ADJECTIVE
 him:
   - PRONOUN
 her:
   - PRONOUN
+are:
+  - VERB
+were:
+  - VERB
+has:
+  - VERB
 there:
   - ADVERB
+be:
+  - VERB
+can:
+  - VERB
 so:
   - ADVERB: 0.6
   - CONJUNCTION: 0.4
@@ -74,13 +100,17 @@ how:
 them:
   - PRONOUN
 king:
-  - VERB
+  - NOUN
 then:
   - ADVERB
+did:
+  - VERB
 my:
   - PRONOUN
 we:
   - PRONOUN
+have:
+  - VERB
 as:
   - ADVERB: 0.4
   - CONJUNCTION: 0.3
@@ -89,10 +119,14 @@ one:
   - PRONOUN: 0.5
   - ADJECTIVE: 0.3
   - NOUN: 0.2
+came:
+  - VERB
 their:
   - PRONOUN
 this:
   - PRONOUN
+man:
+  - NOUN
 "no":
   - ADVERB: 0.5
   - ADJECTIVE: 0.5
@@ -103,8 +137,14 @@ now:
 out:
   - ADVERB: 0.6
   - PREPOSITION: 0.4
+could:
+  - VERB
 your:
   - PRONOUN
+great:
+  - ADJECTIVE
+would:
+  - VERB
 up:
   - ADVERB: 0.6
   - PREPOSITION: 0.4
@@ -112,6 +152,18 @@ up:
   - PUNCT
 very:
   - ADVERB
+day:
+  - NOUN
+old:
+  - ADJECTIVE
+let:
+  - VERB
+good:
+  - ADJECTIVE
+went:
+  - VERB
+time:
+  - NOUN
 from:
   - PREPOSITION
 some:
@@ -123,8 +175,17 @@ away:
   - ADVERB
 by:
   - PREPOSITION
+come:
+  - VERB: 0.8
+  - INTERJECTION: 0.2
 into:
   - PREPOSITION
+men:
+  - NOUN
+ran:
+  - VERB
+dog:
+  - NOUN
 soon:
   - ADVERB
 about:
@@ -132,13 +193,23 @@ about:
   - ADVERB: 0.4
 back:
   - ADVERB
+boy:
+  - NOUN
 down:
   - ADVERB: 0.6
   - PREPOSITION: 0.4
+get:
+  - VERB
+go:
+  - VERB
 if:
   - CONJUNCTION
+think:
+  - VERB
 upon:
   - PREPOSITION
+cat:
+  - NOUN
 here:
   - ADVERB
 like:
@@ -149,6 +220,9 @@ tom:
   - NOUN
 when:
   - CONJUNCTION
+home:
+  - NOUN: 0.6
+  - ADVERB: 0.4
 many:
   - ADJECTIVE: 0.5
   - PRONOUN: 0.5
@@ -156,43 +230,103 @@ too:
   - ADVERB
 john:
   - NOUN
+run:
+  - VERB
+take:
+  - VERB
 after:
   - PREPOSITION: 0.6
   - CONJUNCTION: 0.4
+big:
+  - ADJECTIVE
+boys:
+  - NOUN
+long:
+  - ADJECTIVE
+two:
+  - ADJECTIVE
+gold:
+  - NOUN: 0.7
+  - ADJECTIVE: 0.3
 mother:
   - NOUN
+must:
+  - VERB
 once:
   - ADVERB: 0.6
   - CONJUNCTION: 0.4
+play:
+  - VERB
 still:
   - ADVERB
+last:
+  - ADJECTIVE: 0.6
+  - VERB: 0.2
+  - ADVERB: 0.2
+saw:
+  - VERB
+should:
+  - VERB
+thought:
+  - NOUN: 0.5
+  - VERB: 0.5
 us:
   - PRONOUN
+been:
+  - VERB
+house:
+  - NOUN
+know:
+  - VERB
 nest:
   - ADJECTIVE
+shall:
+  - VERB
 why:
   - ADVERB
+catch:
+  - VERB
+made:
+  - VERB
 again:
   - ADVERB
+door:
+  - NOUN
 o:
   - NOUN
 only:
   - ADVERB: 0.6
   - ADJECTIVE: 0.4
-yes:
+people:
+  - NOUN
+"yes":
   - INTERJECTION: 0.5
   - ADVERB: 0.5
 before:
   - PREPOSITION: 0.5
   - CONJUNCTION: 0.3
   - ADVERB: 0.2
+began:
+  - VERB
 going:
+  - VERB
+hand:
+  - NOUN
+poor:
+  - ADJECTIVE
+found:
+  - VERB
+make:
   - VERB
 more:
   - ADVERB: 0.5
   - ADJECTIVE: 0.5
 oh:
   - INTERJECTION
+tell:
+  - VERB
+way:
+  - NOUN
 well:
   - ADVERB: 0.5
   - INTERJECTION: 0.3
@@ -205,54 +339,177 @@ ann:
   - NOUN
 around:
   - PREPOSITION
+hen:
+  - NOUN
 just:
   - ADVERB
+name:
+  - NOUN
+put:
+  - VERB
+such:
+  - ADJECTIVE
+am:
+  - VERB
+bird:
+  - NOUN
+black:
+  - ADJECTIVE
+children:
+  - NOUN
+dear:
+  - ADJECTIVE
 dick:
+  - NOUN
+first:
+  - ADJECTIVE
+pond:
   - NOUN
 rab:
   - NOUN
+rat:
+  - NOUN
 water:
   - NOUN
+bell:
+  - NOUN
+boat:
+  - NOUN
+every:
+  - ADJECTIVE
+fast:
+  - ADJECTIVE: 0.5
+  - ADVERB: 0.5
+hear:
+  - VERB
+left:
+  - VERB: 0.4
+  - ADJECTIVE: 0.3
+  - NOUN: 0.3
 lived:
+  - VERB
+look:
   - VERB
 looked:
   - VERB
 over:
   - PREPOSITION: 0.5
   - ADVERB: 0.5
+ship:
+  - NOUN
+eyes:
+  - NOUN
+heard:
+  - VERB
+kind:
+  - NOUN: 0.5
+  - ADJECTIVE: 0.5
 near:
   - PREPOSITION
+new:
+  - ADJECTIVE
+night:
+  - NOUN
+took:
+  - VERB
 while:
   - CONJUNCTION
+eggs:
+  - NOUN
 father:
   - NOUN
-give:
+fine:
   - ADJECTIVE
+girl:
+  - NOUN
+give:
+  - VERB
+head:
+  - NOUN
+horse:
+  - NOUN
+keep:
+  - VERB
+knew:
+  - VERB
+lad:
+  - NOUN
 never:
   - ADVERB
 our:
   - PRONOUN
+pig:
+  - NOUN
+place:
+  - NOUN
+stood:
+  - VERB
+work:
+  - NOUN: 0.5
+  - VERB: 0.5
+bed:
+  - NOUN
+box:
+  - NOUN
+far:
+  - ADVERB: 0.5
+  - ADJECTIVE: 0.5
+find:
+  - VERB
+friend:
+  - NOUN
+hands:
+  - NOUN
 indians:
   - NOUN
+its:
+  - PRONOUN
 live:
   - ADJECTIVE
+may:
+  - VERB
 morning:
   - VERB
 mr:
   - NOUN
+next:
+  - ADJECTIVE: 0.5
+  - ADVERB: 0.5
+pet:
+  - NOUN
+skates:
+  - NOUN
+than:
+  - CONJUNCTION
 tried:
+  - VERB
+try:
   - VERB
 turned:
   - VERB
 walked:
   - VERB
+young:
+  - ADJECTIVE
 ah:
   - INTERJECTION
 best:
   - ADJECTIVE
+doll:
+  - NOUN
 ever:
   - ADVERB
+fat:
+  - ADJECTIVE
+fish:
+  - NOUN
+full:
+  - ADJECTIVE
+grass:
+  - NOUN
 indeed:
+  - VERB
+jump:
   - VERB
 jumped:
   - VERB
@@ -265,20 +522,63 @@ much:
   - ADJECTIVE: 0.5
 nat:
   - NOUN
-off:
+"off":
   - ADVERB: 0.6
   - PREPOSITION: 0.4
 other:
   - PRONOUN
+ready:
+  - ADJECTIVE
+rose:
+  - VERB: 0.5
+  - NOUN: 0.5
+sea:
+  - NOUN
 these:
   - PRONOUN
 thing:
   - VERB
+tree:
+  - NOUN
+afraid:
+  - ADJECTIVE
+care:
+  - NOUN
+child:
+  - NOUN
 cinderella:
   - NOUN
+happy:
+  - ADJECTIVE
+hat:
+  - NOUN
+help:
+  - VERB
+queen:
+  - NOUN
+ride:
+  - VERB
+rock:
+  - NOUN
+sat:
+  - VERB
+told:
+  - VERB
 under:
   - PREPOSITION
-don't:
+wise:
+  - ADJECTIVE
+wish:
+  - VERB
+air:
+  - NOUN
+brave:
+  - ADJECTIVE
+brought:
+  - VERB
+city:
+  - NOUN
+"don't":
   - VERB
 even:
   - ADVERB: 0.6
@@ -287,37 +587,116 @@ fitzwarren:
   - NOUN
 frank:
   - NOUN
+gave:
+  - VERB
+heart:
+  - NOUN
+kingdom:
+  - NOUN
 longer:
+  - NOUN
+love:
   - NOUN
 margery:
   - NOUN
+pretty:
+  - ADJECTIVE
 rome:
+  - NOUN
+sad:
+  - ADJECTIVE
+save:
+  - VERB
+shoes:
   - NOUN
 those:
   - PRONOUN
+white:
+  - ADJECTIVE
+woods:
+  - NOUN
+world:
+  - NOUN
+years:
+  - NOUN
 across:
   - PREPOSITION
 charney:
   - NOUN
 dancing:
   - VERB
+days:
+  - NOUN
+eat:
+  - VERB
+fell:
+  - VERB
+fire:
+  - NOUN
 five:
+  - ADJECTIVE
+forgot:
+  - VERB
+friends:
+  - NOUN
+frog:
+  - NOUN
+glad:
   - ADJECTIVE
 himself:
   - PRONOUN
+hold:
+  - VERB
+hot:
+  - ADJECTIVE
 jumper:
   - NOUN
 laughed:
   - VERB
 lucy:
   - NOUN
+mamma:
+  - NOUN
+open:
+  - ADJECTIVE: 0.5
+  - VERB: 0.5
 opened:
   - VERB
+prince:
+  - NOUN
+send:
+  - VERB
+stones:
+  - NOUN
 stopped:
   - VERB
+story:
+  - NOUN
+strong:
+  - ADJECTIVE
+sun:
+  - NOUN
+sweet:
+  - ADJECTIVE
+things:
+  - NOUN
+wall:
+  - NOUN
 whose:
   - PRONOUN
 willie:
+  - NOUN
+words:
+  - NOUN
+abbot:
+  - NOUN
+angry:
+  - ADJECTIVE
+army:
+  - NOUN
+band:
+  - NOUN
+bank:
   - NOUN
 behind:
   - PREPOSITION
@@ -325,26 +704,93 @@ bring:
   - VERB
 called:
   - VERB
+captain:
+  - NOUN
 carried:
+  - VERB
+cut:
+  - VERB
+dare:
   - VERB
 daughter:
   - NOUN
+done:
+  - VERB
+donkey:
+  - NOUN
 each:
   - PRONOUN
+fan:
+  - NOUN
+fear:
+  - NOUN
+fun:
+  - NOUN
+goat:
+  - NOUN
+grew:
+  - VERB
+ground:
+  - NOUN
+held:
+  - VERB
+horses:
+  - NOUN
+ice:
+  - NOUN
+joy:
+  - NOUN
+lady:
+  - NOUN
+lay:
+  - VERB
+mat:
+  - NOUN
+nag:
+  - NOUN
 ned:
   - NOUN
 nell:
+  - NOUN
+noise:
+  - NOUN
+own:
+  - ADJECTIVE: 0.5
+  - VERB: 0.5
+please:
+  - INTERJECTION
+room:
+  - NOUN
+rope:
   - NOUN
 rushed:
   - VERB
 saved:
   - VERB
+say:
+  - VERB
+school:
+  - NOUN
+set:
+  - VERB
+shade:
+  - NOUN
 sing:
   - VERB
+soldiers:
+  - NOUN
 sue:
+  - NOUN
+taken:
+  - VERB
+top:
   - NOUN
 toward:
   - PREPOSITION
+whip:
+  - NOUN
+ago:
+  - ADVERB
 along:
   - PREPOSITION
 always:
@@ -353,81 +799,234 @@ answer:
   - NOUN
 anything:
   - PRONOUN
+barn:
+  - NOUN
+basket:
+  - NOUN
+battle:
+  - NOUN
 beautiful:
   - ADJECTIVE
+birds:
+  - NOUN
+book:
+  - NOUN
+both:
+  - PRONOUN
+bright:
+  - ADJECTIVE
+cannot:
+  - VERB
+castle:
+  - NOUN
+cup:
+  - NOUN
+die:
+  - VERB
 doing:
+  - VERB
+fall:
   - VERB
 fanny:
   - NOUN
 feed:
   - VERB
-i'm:
+fellow:
+  - NOUN
+fly:
+  - VERB
+girls:
+  - NOUN
+golden:
+  - ADJECTIVE
+got:
+  - VERB
+hard:
+  - ADJECTIVE: 0.6
+  - ADVERB: 0.4
+"i'm":
   - VERB
 indian:
   - NOUN
 james:
   - NOUN
+join:
+  - VERB
+kept:
+  - VERB
 leaped:
   - VERB
+lips:
+  - NOUN
+log:
+  - NOUN
+lost:
+  - VERB: 0.5
+  - ADJECTIVE: 0.5
 master:
   - NOUN
 matter:
   - NOUN
+might:
+  - VERB
 moment:
+  - NOUN
+owl:
   - NOUN
 picciola:
   - NOUN
 reached:
   - VERB
+read:
+  - VERB
 ring:
   - VERB
+said:
+  - VERB
+sees:
+  - VERB
+side:
+  - NOUN
+sir:
+  - NOUN
 skipping:
+  - VERB
+sleep:
+  - VERB
+speak:
+  - VERB
+spoke:
   - VERB
 spring:
   - VERB
+stand:
+  - VERB
 table:
-  - ADJECTIVE
+  - NOUN
+tail:
+  - NOUN
 through:
   - PREPOSITION
 together:
   - NOUN
+town:
+  - NOUN
+"true":
+  - ADJECTIVE
+wait:
+  - VERB
 which:
   - PRONOUN
+wolf:
+  - NOUN
+word:
+  - NOUN
 almost:
   - ADVERB
 another:
   - PRONOUN
+any:
+  - ADJECTIVE: 0.5
+  - PRONOUN: 0.5
+arms:
+  - NOUN
 asked:
   - VERB
+asleep:
+  - ADJECTIVE
+baby:
+  - NOUN
 bess:
   - NOUN
 better:
   - NOUN
+books:
+  - NOUN
 bravely:
   - ADVERB
-can't:
+bread:
+  - NOUN
+bridge:
+  - NOUN
+broken:
+  - VERB
+call:
+  - VERB
+"can't":
+  - VERB
+cap:
+  - NOUN
+comes:
   - VERB
 danger:
+  - NOUN
+dark:
+  - ADJECTIVE
+dig:
+  - VERB
+does:
+  - VERB
+drink:
+  - VERB
+duck:
   - NOUN
 evening:
   - VERB
 everything:
   - PRONOUN
+feet:
+  - NOUN
+flag:
+  - NOUN
+flew:
+  - VERB
+flowers:
+  - NOUN
+fox:
+  - NOUN
+geese:
+  - NOUN
 henry:
+  - NOUN
+jewels:
   - NOUN
 killed:
   - VERB
+land:
+  - NOUN
+lazy:
+  - ADJECTIVE
+life:
+  - NOUN
+listen:
+  - VERB
+lives:
+  - NOUN
 london:
   - NOUN
+looks:
+  - VERB
 need:
   - VERB
+nice:
+  - ADJECTIVE
 nothing:
   - PRONOUN
 passed:
   - VERB
+plant:
+  - NOUN
 ponto:
   - NOUN
+rich:
+  - ADJECTIVE
+rode:
+  - VERB
 running:
+  - VERB
+safe:
+  - ADJECTIVE
+seen:
   - VERB
 sitting:
   - VERB
@@ -435,14 +1034,22 @@ soldier:
   - NOUN
 something:
   - PRONOUN
-tom's:
+stone:
+  - NOUN
+three:
+  - ADJECTIVE
+"tom's":
   - NOUN
 until:
   - PREPOSITION
+walk:
+  - VERB
 watched:
   - VERB
 whittington:
   - NOUN
+wide:
+  - ADJECTIVE
 wilhelm:
   - NOUN
 without:
@@ -451,25 +1058,87 @@ against:
   - PREPOSITION
 andernach:
   - NOUN
+arrow:
+  - NOUN
+awoke:
+  - VERB
+bear:
+  - VERB: 0.5
+  - NOUN: 0.5
+birdie:
+  - NOUN
+blew:
+  - VERB
+blind:
+  - ADJECTIVE
 caesar:
   - NOUN
+carry:
+  - VERB
+cart:
+  - NOUN
+cows:
+  - NOUN
+dead:
+  - ADJECTIVE
 dinner:
+  - NOUN
+dress:
   - NOUN
 early:
   - ADVERB
 expected:
   - VERB
+farm:
+  - NOUN
 faster:
   - NOUN
+fed:
+  - VERB
+felt:
+  - VERB
+few:
+  - ADJECTIVE
 fido:
   - NOUN
+fight:
+  - VERB
 filled:
   - VERB
+flies:
+  - VERB
+foes:
+  - NOUN
 following:
   - VERB
+foolish:
+  - ADJECTIVE
+foot:
+  - NOUN
+fought:
+  - VERB
+free:
+  - ADJECTIVE
+fright:
+  - NOUN
 god:
   - NOUN
+gone:
+  - VERB
+grandma:
+  - NOUN
+hair:
+  - NOUN
+half:
+  - NOUN: 0.5
+  - ADJECTIVE: 0.5
 happened:
+  - VERB
+honor:
+  - NOUN
+jig:
+  - NOUN
+kill:
   - VERB
 kindly:
   - ADVERB
@@ -477,261 +1146,812 @@ larger:
   - NOUN
 learned:
   - VERB
+light:
+  - NOUN: 0.4
+  - ADJECTIVE: 0.3
+  - VERB: 0.3
+likes:
+  - VERB
+lines:
+  - NOUN
+lion:
+  - NOUN
+logs:
+  - NOUN
+lose:
+  - VERB
+maiden:
+  - NOUN
+mean:
+  - VERB: 0.5
+  - ADJECTIVE: 0.5
+merry:
+  - ADJECTIVE
 midas:
   - NOUN
-mother's:
+money:
+  - NOUN
+"mother's":
   - NOUN
 moved:
   - VERB
+music:
+  - NOUN
 or:
   - CONJUNCTION
+pale:
+  - ADJECTIVE
+papa:
+  - NOUN
+pass:
+  - VERB
+peep:
+  - VERB
+pen:
+  - NOUN
+picture:
+  - NOUN
+prison:
+  - NOUN
+promise:
+  - NOUN
+pull:
+  - VERB
 pulled:
   - VERB
 right:
   - ADJECTIVE: 0.4
   - ADVERB: 0.3
   - NOUN: 0.3
+servants:
+  - NOUN
+sheep:
+  - NOUN
+short:
+  - ADJECTIVE
+sight:
+  - NOUN
 sister:
   - NOUN
+sit:
+  - VERB
+sits:
+  - VERB
 slowly:
   - ADVERB
+son:
+  - NOUN
+sound:
+  - NOUN
+spindle:
+  - NOUN
+sport:
+  - NOUN
+spot:
+  - NOUN
+sprang:
+  - VERB
 started:
   - VERB
+stay:
+  - VERB
+straw:
+  - NOUN
+struck:
+  - VERB
+sure:
+  - ADJECTIVE
 swiftly:
   - ADVERB
+sword:
+  - NOUN
+talk:
+  - VERB
 thanked:
   - VERB
+threw:
+  - VERB
+thumb:
+  - NOUN
+times:
+  - NOUN
+trouble:
+  - NOUN
+truth:
+  - NOUN
+waves:
+  - NOUN
+wig:
+  - NOUN
 wished:
   - VERB
+woman:
+  - NOUN
+wrong:
+  - ADJECTIVE: 0.5
+  - NOUN: 0.3
+  - ADVERB: 0.2
+yellow:
+  - ADJECTIVE
 ":":
   - PUNCT
 above:
   - PREPOSITION
+act:
+  - NOUN: 0.5
+  - VERB: 0.5
 androclus:
+  - NOUN
+apple:
+  - NOUN
+arrows:
   - NOUN
 atri:
   - NOUN
+ball:
+  - NOUN
+beach:
+  - NOUN
+beam:
+  - NOUN
 because:
   - CONJUNCTION
+beggar:
+  - NOUN
 ben:
+  - NOUN
+bench:
   - NOUN
 between:
   - PREPOSITION
 blamed:
   - VERB
+bows:
+  - NOUN
+breakfast:
+  - NOUN
 bremen:
+  - NOUN
+brothers:
+  - NOUN
+buoy:
   - NOUN
 burned:
   - VERB
+buy:
+  - VERB
+cage:
+  - NOUN
+cars:
+  - NOUN
+chick:
+  - NOUN
 cincinnatus:
   - NOUN
 clapped:
   - VERB
+clock:
+  - NOUN
+clothes:
+  - NOUN
+clubs:
+  - NOUN
+cold:
+  - ADJECTIVE
 coming:
   - VERB
+consonants:
+  - NOUN
+cook:
+  - VERB
+cool:
+  - ADJECTIVE
+count:
+  - VERB: 0.5
+  - NOUN: 0.5
+country:
+  - NOUN
+course:
+  - NOUN
 covered:
   - VERB
+crack:
+  - NOUN
+crept:
+  - VERB
+cross:
+  - VERB: 0.4
+  - ADJECTIVE: 0.3
+  - NOUN: 0.3
 crowded:
+  - VERB
+cry:
+  - VERB
+dance:
   - VERB
 dared:
   - VERB
+deck:
+  - NOUN
+dirty:
+  - ADJECTIVE
+dolls:
+  - NOUN
 dressed:
   - VERB
-elephant's:
+drew:
+  - VERB
+drown:
+  - VERB
+ducks:
+  - NOUN
+"elephant's":
   - NOUN
 england:
   - NOUN
+fairies:
+  - NOUN
+fairy:
+  - NOUN
+fallen:
+  - VERB
+fellows:
+  - NOUN
 finished:
   - VERB
+floor:
+  - NOUN
 flower:
+  - NOUN
+forth:
+  - ADVERB
+forward:
+  - ADVERB
+funny:
+  - ADJECTIVE
+gift:
+  - NOUN
+gig:
+  - NOUN
+gives:
+  - VERB
+goats:
   - NOUN
 goldsmith:
   - NOUN
+goody:
+  - NOUN: 0.6
+  - INTERJECTION: 0.4
 greatest:
   - ADJECTIVE
 greeted:
   - VERB
+hawk:
+  - NOUN
+heads:
+  - NOUN
+heavy:
+  - ADJECTIVE
 helped:
   - VERB
 herself:
   - PRONOUN
+hid:
+  - VERB
+high:
+  - ADJECTIVE: 0.6
+  - ADVERB: 0.4
+holds:
+  - VERB
+honey:
+  - NOUN
+hope:
+  - VERB
+houses:
+  - NOUN
+hungry:
+  - ADJECTIVE
+hurt:
+  - VERB
+ill:
+  - ADJECTIVE
 inchcape:
   - NOUN
 jip:
   - NOUN
+justice:
+  - NOUN
 kissed:
   - VERB
+lambs:
+  - NOUN
+lamp:
+  - NOUN
+large:
+  - ADJECTIVE
+leave:
+  - VERB
+length:
+  - NOUN
+letters:
+  - NOUN
 liked:
   - VERB
+line:
+  - NOUN
 lintz:
   - NOUN
 looking:
   - VERB
+lord:
+  - NOUN
 louder:
   - NOUN
 married:
   - VERB
+meat:
+  - NOUN
+met:
+  - VERB
+mill:
+  - NOUN
 miller:
   - NOUN
+mind:
+  - NOUN
+minute:
+  - NOUN
+mouth:
+  - NOUN
+move:
+  - VERB
 named:
   - VERB
-nat's:
+"nat's":
   - NOUN
+neck:
+  - NOUN
+news:
+  - NOUN
+none:
+  - PRONOUN
 noticed:
+  - VERB
+obey:
   - VERB
 often:
   - ADVERB
 ordered:
   - VERB
+pan:
+  - NOUN
+piece:
+  - NOUN
 playing:
   - VERB
 pleased:
   - VERB
 pudding:
   - VERB
+puss:
+  - NOUN
+reach:
+  - VERB
 rest:
   - ADJECTIVE
+rise:
+  - VERB
 river:
+  - NOUN
+road:
   - NOUN
 romans:
   - NOUN
+roof:
+  - NOUN
+round:
+  - ADJECTIVE: 0.4
+  - ADVERB: 0.3
+  - PREPOSITION: 0.3
 sailed:
+  - VERB
+says:
+  - VERB
+sent:
   - VERB
 shining:
   - VERB
+ships:
+  - NOUN
+shout:
+  - VERB
+shut:
+  - VERB
+six:
+  - ADJECTIVE
 sleeping:
   - VERB
+small:
+  - ADJECTIVE
 smith:
+  - NOUN
+snow:
+  - NOUN
+sometimes:
+  - ADVERB
+spade:
   - NOUN
 spartans:
   - NOUN
 spider:
   - NOUN
+spread:
+  - VERB
+stairs:
+  - NOUN
+statue:
+  - NOUN
+stop:
+  - VERB
+strange:
+  - ADJECTIVE
+streets:
+  - NOUN
+tall:
+  - ADJECTIVE
+tap:
+  - NOUN
 though:
   - CONJUNCTION
+tiny:
+  - ADJECTIVE
+touch:
+  - VERB
 touched:
   - VERB
+train:
+  - NOUN
+trees:
+  - NOUN
+turn:
+  - VERB
+use:
+  - VERB
+voice:
+  - NOUN
+vowel:
+  - NOUN
+wagon:
+  - NOUN
 waiting:
   - VERB
-won't:
+want:
+  - VERB
+watch:
+  - VERB
+ways:
+  - NOUN
+wife:
+  - NOUN
+wind:
+  - NOUN
+wings:
+  - NOUN
+"won't":
   - VERB
 wonder:
   - NOUN
+year:
+  - NOUN
 yet:
   - ADVERB
+ablaze:
+  - ADJECTIVE
+alone:
+  - ADJECTIVE: 0.5
+  - ADVERB: 0.5
 alps:
   - NOUN
 also:
   - ADVERB
 among:
   - PREPOSITION
-ann's:
+"ann's":
   - NOUN
+apples:
+  - NOUN
+arose:
+  - VERB
 arranged:
   - VERB
+attack:
+  - NOUN
+attic:
+  - NOUN
+ax:
+  - NOUN
+bade:
+  - VERB
+bark:
+  - NOUN
 barmecide:
   - NOUN
+battles:
+  - NOUN
+beams:
+  - NOUN
+beauty:
+  - NOUN
+became:
+  - VERB
+become:
+  - VERB
+bees:
+  - NOUN
+belong:
+  - VERB
 blacking:
   - VERB
+blend:
+  - VERB
+blossoms:
+  - NOUN
+blue:
+  - ADJECTIVE
+board:
+  - NOUN
+bought:
+  - VERB
+bound:
+  - ADJECTIVE: 0.5
+  - VERB: 0.5
+bow:
+  - NOUN
+break:
+  - VERB
+breeze:
+  - NOUN
 brother:
   - NOUN
+bush:
+  - NOUN
+bushes:
+  - NOUN
+camp:
+  - NOUN
+carpet:
+  - NOUN
+cattle:
+  - NOUN
+caught:
+  - VERB
+cave:
+  - NOUN
+chair:
+  - NOUN
+chew:
+  - VERB
+choose:
+  - VERB
 chopped:
   - VERB
+church:
+  - NOUN
 clam-bered:
   - VERB
+clear:
+  - ADJECTIVE: 0.5
+  - VERB: 0.3
+  - ADVERB: 0.2
 climbed:
+  - VERB
+cloak:
+  - NOUN
+common:
+  - ADJECTIVE
+contains:
   - VERB
 cover:
   - NOUN
+cow:
+  - NOUN
+crash:
+  - NOUN
 cried:
   - VERB
+crown:
+  - NOUN
+cruel:
+  - ADJECTIVE
 damon:
   - NOUN
 dearly:
   - ADVERB
+death:
+  - NOUN
+deep:
+  - ADJECTIVE
 delighted:
   - VERB
-dick's:
+"dick's":
   - NOUN
 ding:
   - VERB
+disobey:
+  - VERB
+dogs:
+  - NOUN
+dry:
+  - ADJECTIVE
+ears:
+  - NOUN
 ellen:
+  - NOUN
+else:
+  - ADVERB
+enemies:
+  - NOUN
+envy:
   - NOUN
 everybody:
   - PRONOUN
 exactly:
   - ADVERB
+face:
+  - NOUN
 faced:
+  - VERB
+fail:
   - VERB
 failed:
   - VERB
+failure:
+  - NOUN
 farmer:
   - NOUN
-farmer's:
+"farmer's":
   - NOUN
 farther:
   - NOUN
 fathers:
   - NOUN
+feels:
+  - VERB
 fitted:
   - VERB
+flames:
+  - NOUN
 floating:
   - VERB
+food:
+  - NOUN
+forget:
+  - VERB
+four:
+  - ADJECTIVE
+game:
+  - NOUN
 gatekeeper:
+  - NOUN
+gates:
   - NOUN
 gayly:
   - ADVERB
+gems:
+  - NOUN
+gentle:
+  - ADJECTIVE
 gessler:
   - NOUN
+given:
+  - VERB
 grandfather:
   - NOUN
 greece:
   - NOUN
+guess:
+  - VERB
+guns:
+  - NOUN
 happily:
   - ADVERB
+harm:
+  - NOUN
+haste:
+  - NOUN
 hattie:
   - NOUN
 having:
   - VERB
+heaven:
+  - NOUN
 helping:
   - VERB
 higher:
   - NOUN
+hill:
+  - NOUN
+hit:
+  - VERB
+hives:
+  - NOUN
+hoist:
+  - VERB
+homes:
+  - NOUN
+huge:
+  - ADJECTIVE
 hundred:
+  - VERB
+hung:
   - VERB
 hunting:
   - VERB
 hurried:
   - VERB
-i've:
+"i've":
   - VERB
+instant:
+  - NOUN: 0.6
+  - ADJECTIVE: 0.4
 italy:
   - NOUN
 jailer:
   - NOUN
-king's:
+judges:
   - NOUN
-kitty's:
+kids:
   - NOUN
+"king's":
+  - NOUN
+kitchen:
+  - NOUN
+"kitty's":
+  - NOUN
+lands:
+  - NOUN
+laugh:
+  - VERB
+learn:
+  - VERB
 leather:
+  - NOUN
+liberty:
+  - NOUN
+lie:
+  - VERB
+lighthouse:
+  - NOUN
+list:
   - NOUN
 listened:
   - VERB
 living:
   - VERB
+loud:
+  - ADJECTIVE
 loved:
   - VERB
 lovely:
   - ADVERB
+loves:
+  - VERB
 lying:
   - VERB
+magic:
+  - NOUN: 0.5
+  - ADJECTIVE: 0.5
 making:
   - VERB
-man's:
+"man's":
   - NOUN
 marching:
   - VERB
-margery's:
+"margery's":
+  - NOUN
+mark:
+  - NOUN
+masts:
   - NOUN
 mayor:
   - NOUN
@@ -742,24 +1962,44 @@ most:
   - ADJECTIVE: 0.5
 motion:
   - NOUN
+mouse:
+  - NOUN
 mrs:
   - NOUN
 nicely:
   - ADVERB
+noon:
+  - NOUN
 nor:
   - CONJUNCTION
 older:
   - NOUN
+overtook:
+  - VERB
+palace:
+  - NOUN
+parents:
+  - NOUN
+part:
+  - NOUN
 past:
   - PREPOSITION
+pat:
+  - VERB
+penny:
+  - NOUN
 perhaps:
   - NOUN
 persian:
+  - NOUN
+pieces:
   - NOUN
 pitter-patter:
   - NOUN
 placed:
   - VERB
+plans:
+  - NOUN
 polly:
   - NOUN
 pooh:
@@ -768,21 +2008,49 @@ possible:
   - ADJECTIVE
 powder:
   - NOUN
+princess:
+  - NOUN
+puddle:
+  - NOUN
+punish:
+  - VERB
 puz-zled:
   - VERB
+quail:
+  - NOUN
 queer:
   - NOUN
 question:
   - NOUN
 quickly:
   - ADVERB
+quiet:
+  - ADJECTIVE
 quite:
   - ADVERB
+rags:
+  - NOUN
+rainy:
+  - ADJECTIVE
+raise:
+  - VERB
 ralph:
   - NOUN
 reading:
   - VERB
+reads:
+  - VERB
+riches:
+  - NOUN
+roar:
+  - VERB
+rob:
+  - VERB
+robbers:
+  - NOUN
 robert:
+  - NOUN
+rocks:
   - NOUN
 roman:
   - NOUN
@@ -792,9 +2060,17 @@ rowed:
   - VERB
 ruler:
   - NOUN
+sank:
+  - VERB
+scarlet:
+  - NOUN
 scattered:
   - VERB
 schacabac:
+  - NOUN
+schoolhouse:
+  - NOUN
+schoolroom:
   - NOUN
 seeking:
   - VERB
@@ -802,79 +2078,202 @@ seemed:
   - VERB
 seized:
   - VERB
+shake:
+  - VERB
+sharp:
+  - ADJECTIVE
+shells:
+  - NOUN
 shoemaker:
   - NOUN
+shook:
+  - VERB
+shore:
+  - NOUN
+show:
+  - VERB
 showed:
   - VERB
 silly:
   - ADVERB
 silver:
   - NOUN
+simple:
+  - ADJECTIVE
 singing:
   - VERB
 sinking:
   - VERB
+sisters:
+  - NOUN
+skip:
+  - VERB
+sky:
+  - NOUN
+slept:
+  - VERB
 smiled:
   - VERB
-smith's:
+"smith's":
+  - NOUN
+smoke:
+  - NOUN
+smooth:
+  - ADJECTIVE
+soft:
+  - ADJECTIVE
+song:
   - NOUN
 sounded:
   - VERB
+spare:
+  - VERB
+spear:
+  - NOUN
+spears:
+  - NOUN
+spin:
+  - VERB
 spinning:
   - VERB
+spoil:
+  - VERB
+stands:
+  - VERB
+start:
+  - VERB
+step:
+  - NOUN
+steps:
+  - NOUN
+sticks:
+  - NOUN
 stooped:
   - VERB
+storm:
+  - NOUN
 story-teller:
   - NOUN
 strapped:
   - VERB
+street:
+  - NOUN
 stronger:
   - NOUN
+swift:
+  - ADJECTIVE
 swing:
   - VERB
 switzerland:
   - NOUN
+tables:
+  - NOUN
+tails:
+  - NOUN
 teacher:
   - NOUN
+thank:
+  - VERB
 thinner:
   - NOUN
+third:
+  - ADJECTIVE
+thorn:
+  - NOUN
+thousand:
+  - ADJECTIVE
+thread:
+  - NOUN
 till:
+  - NOUN
+tobacco:
   - NOUN
 tossed:
   - VERB
 trembled:
   - VERB
+trick:
+  - NOUN
+trot:
+  - VERB
+twelve:
+  - ADJECTIVE
+tyrant:
+  - NOUN
 ugly:
   - ADVERB
+upset:
+  - ADJECTIVE: 0.6
+  - VERB: 0.4
 waited:
   - VERB
+walls:
+  - NOUN
 wanted:
   - VERB
+warm:
+  - ADJECTIVE
 welcome:
   - NOUN
+wheel:
+  - NOUN
 whirled:
+  - VERB
+whistle:
   - VERB
 whom:
   - PRONOUN
 wicked:
   - VERB
+wild:
+  - ADJECTIVE
+window:
+  - NOUN
+wisdom:
+  - NOUN
 within:
   - PREPOSITION
+won:
+  - VERB
 wondered:
   - VERB
+worn:
+  - VERB: 0.5
+  - ADJECTIVE: 0.5
+worse:
+  - ADJECTIVE: 0.6
+  - ADVERB: 0.4
+worth:
+  - NOUN
 wounded:
   - VERB
 wronged:
   - VERB
+yard:
+  - NOUN
 yourself:
   - PRONOUN
-abbot's:
+"'twould":
+  - VERB
+"'what":
+  - PRONOUN
+"abbot's":
   - NOUN
 aberbrothock:
   - NOUN
 able:
   - ADJECTIVE
 added:
+  - VERB
+after-ward:
+  - ADVERB
+afterward:
+  - ADVERB
+age:
+  - NOUN
+aid:
+  - NOUN
+aim:
   - VERB
 alexander:
   - NOUN
@@ -884,11 +2283,14 @@ alice:
   - NOUN
 alive:
   - ADJECTIVE
+along-side:
+  - ADVERB: 0.5
+  - PREPOSITION: 0.5
 already:
   - ADVERB
 anger:
   - NOUN
-animal's:
+"animal's":
   - NOUN
 answered:
   - VERB
@@ -898,21 +2300,57 @@ anybody:
   - PRONOUN
 armed:
   - VERB
-arnold's:
+armor:
+  - NOUN
+"arnold's":
   - NOUN
 aroused:
   - VERB
+arrange:
+  - VERB
+art:
+  - NOUN
 ashamed:
   - VERB
+ashy:
+  - ADJECTIVE
+ask:
+  - VERB
+asks:
+  - VERB
+awake:
+  - ADJECTIVE
 badly:
   - ADVERB
+bag:
+  - NOUN
+bags:
+  - NOUN
+bakers:
+  - NOUN
 bandy:
   - NOUN
-barber's:
+"barber's":
   - NOUN
-bear's:
+bare:
+  - ADJECTIVE
+basin:
   - NOUN
-bears':
+bay:
+  - NOUN
+beads:
+  - NOUN
+"bear's":
+  - NOUN
+"bears'":
+  - NOUN
+beat:
+  - VERB
+beaten:
+  - VERB
+beds:
+  - NOUN
+beehives:
   - NOUN
 begged:
   - VERB
@@ -920,48 +2358,98 @@ begging:
   - VERB
 being:
   - VERB
+believe:
+  - VERB
 belonged:
+  - VERB
+belongs:
   - VERB
 below:
   - PREPOSITION
+bent:
+  - VERB
 besides:
   - PREPOSITION
+bidden:
+  - VERB
+bill:
+  - NOUN
 billy:
   - NOUN
-bird's:
+birch:
+  - NOUN
+"bird's":
+  - NOUN
+bits:
   - NOUN
 blazing:
   - VERB
 bless:
   - ADJECTIVE
-bow-man's:
+blow:
+  - VERB
+blown:
+  - VERB
+bold:
+  - ADJECTIVE
+"bow-man's":
   - NOUN
 bowed:
   - VERB
-boy's:
+"boy's":
+  - NOUN
+branches:
   - NOUN
 breaking:
   - VERB
+breast:
+  - NOUN
+bride:
+  - NOUN
 brighter:
   - NOUN
+brook:
+  - NOUN
+brown:
+  - ADJECTIVE
 bruce:
   - NOUN
-bu-ceph'a-lus:
+"bu-ceph'a-lus":
   - NOUN
 bucephalus:
   - NOUN
+built:
+  - VERB
 bumped:
+  - VERB
+burn:
+  - VERB
+busy:
+  - ADJECTIVE
+buzz:
   - VERB
 buzzing:
   - VERB
+cabin:
+  - NOUN
+cabins:
+  - NOUN
+cakes:
+  - NOUN
 calling:
   - VERB
+calls:
+  - VERB
+cane:
+  - NOUN
 canterbury:
   - NOUN
 cared:
   - VERB
 carefully:
   - ADVERB
+cares:
+  - NOUN
 carrying:
   - VERB
 carthage:
@@ -972,54 +2460,124 @@ ceiling:
   - VERB
 center:
   - NOUN
+certain:
+  - ADJECTIVE
+chain:
+  - NOUN
+chairs:
+  - NOUN
+chance:
+  - NOUN
 chanced:
+  - VERB
+change:
   - VERB
 changed:
   - VERB
 charmed:
   - VERB
-charney's:
+"charney's":
+  - NOUN
+cheat:
+  - VERB
+cheek:
+  - NOUN
+cheeks:
+  - NOUN
+cherry:
   - NOUN
 chewing:
   - VERB
+chickens:
+  - NOUN
+chil-dren:
+  - NOUN
 chippy:
+  - NOUN
+cinders:
+  - NOUN
+cities:
+  - NOUN
+clang:
   - NOUN
 clasped:
   - VERB
+clean:
+  - ADJECTIVE
 climbing:
   - VERB
 clinging:
   - VERB
+close:
+  - ADJECTIVE: 0.4
+  - VERB: 0.4
+  - ADVERB: 0.2
 closed:
   - VERB
 coating:
   - VERB
+cock:
+  - NOUN
 cockadoodledoo:
   - NOUN
+coil:
+  - VERB
+collar:
+  - NOUN
+combinations:
+  - NOUN
+combines:
+  - VERB
 command:
   - NOUN
 condition:
   - NOUN
-cook's:
+"cook's":
+  - NOUN
+corn:
   - NOUN
 cornelia:
   - NOUN
-cornelia's:
+"cornelia's":
   - NOUN
 corner:
   - NOUN
+cost:
+  - NOUN
 counted:
   - VERB
+countries:
+  - NOUN
+courage:
+  - NOUN
 cowribs:
   - NOUN
+crackers:
+  - NOUN
+cradle:
+  - NOUN
+creatures:
+  - NOUN
+crew:
+  - NOUN
+crib:
+  - NOUN
+cries:
+  - VERB
+crisp:
+  - ADJECTIVE
 cross-legged:
   - VERB
 crossed:
   - VERB
+crowd:
+  - NOUN
 crying:
   - VERB
 cunning:
   - VERB
+curtain:
+  - NOUN
 cutting:
   - VERB
 damocles:
@@ -1028,137 +2586,300 @@ danced:
   - VERB
 dane:
   - NOUN
+dares:
+  - VERB
 dashed:
   - VERB
+daughters:
+  - NOUN
 david:
   - NOUN
-david's:
+"david's":
   - NOUN
 dazzled:
   - VERB
+deal:
+  - VERB
 dearest:
   - ADJECTIVE
+deeds:
+  - NOUN
 delicious:
   - ADJECTIVE
 depended:
   - VERB
+des-sert:
+  - NOUN
 deserved:
   - VERB
-didn't:
+desk:
+  - NOUN
+"didn't":
   - VERB
+different:
+  - ADJECTIVE
 ding-dong:
   - NOUN
 diogenes:
   - NOUN
-dionys'i-us:
+"dionys'i-us":
   - NOUN
-doll's:
+directions:
+  - NOUN
+dirt:
+  - NOUN
+dishes:
+  - NOUN
+distant:
+  - ADJECTIVE
+"doll's":
+  - NOUN
+doors:
+  - NOUN
+doubt:
   - NOUN
 douglas:
+  - NOUN
+doves:
   - NOUN
 dragged:
   - VERB
 dragging:
   - VERB
+draw:
+  - VERB
+draws:
+  - VERB
+dreary:
+  - ADJECTIVE
 drifting:
   - VERB
+drill:
+  - NOUN: 0.5
+  - VERB: 0.5
 drive:
   - ADJECTIVE
+driven:
+  - VERB
+drives:
+  - VERB
 driving:
+  - VERB
+droop:
   - VERB
 drooped:
   - VERB
+drop:
+  - VERB
+drops:
+  - VERB
+drove:
+  - VERB
+dust:
+  - NOUN
+dusty:
+  - ADJECTIVE
 dying:
   - VERB
 eager:
   - NOUN
+eagle:
+  - NOUN
+ear:
+  - NOUN
+earn:
+  - VERB
 earned:
   - VERB
 earnest:
   - ADJECTIVE
 easily:
   - ADVERB
+east:
+  - NOUN
+easy:
+  - ADJECTIVE
+easy-chair:
+  - NOUN
+eaten:
+  - VERB
 eating:
   - VERB
+eight:
+  - ADJECTIVE
+elves:
+  - NOUN
 ended:
+  - VERB
+errand:
+  - NOUN
+escape:
   - VERB
 every-body:
   - NOUN
 every-thing:
   - VERB
+every-where:
+  - ADVERB
+exact:
+  - ADJECTIVE
 except:
   - PREPOSITION
 faded:
   - VERB
+fails:
+  - VERB
+fair:
+  - ADJECTIVE
 fairly:
   - ADVERB
-fairy's:
+"fairy's":
+  - NOUN
+faith:
   - NOUN
 falling:
   - VERB
+families:
+  - NOUN
 family:
   - ADVERB
 famous:
   - ADJECTIVE
+far-off:
+  - ADJECTIVE
+farms:
+  - NOUN
+farmyard:
+  - NOUN
 fas-tened:
+  - VERB
+fasten:
   - VERB
 fastened:
   - VERB
-father's:
+fastenings:
+  - NOUN
+"father's":
   - NOUN
 feared:
   - VERB
 fearing:
   - VERB
+feast:
+  - NOUN
+feathers:
+  - NOUN
+features:
+  - NOUN
+feel:
+  - VERB
 fewer:
+  - NOUN
+field:
   - NOUN
 fighting:
   - VERB
+figs:
+  - NOUN
+figures:
+  - NOUN
 finest:
   - ADJECTIVE
 finger:
   - NOUN
-fitz-war'ren:
+fingers:
   - NOUN
-fitz-warren's:
+firm:
+  - ADJECTIVE
+"fitz-war'ren":
+  - NOUN
+"fitz-warren's":
+  - NOUN
+flag-ship:
+  - NOUN
+flags:
+  - NOUN
+flap:
+  - VERB
+flask:
   - NOUN
 fled:
   - VERB
 floated:
   - VERB
+flour:
+  - NOUN
+flowery:
+  - ADJECTIVE
+flown:
+  - VERB
+fog:
+  - NOUN
 follow:
   - NOUN
 followed:
   - VERB
+follows:
+  - VERB
+fond:
+  - ADJECTIVE
 foolishly:
   - ADVERB
+fools:
+  - NOUN
+forehead:
+  - NOUN
 forest:
-  - ADJECTIVE
+  - NOUN
+forests:
+  - NOUN
+foretold:
+  - VERB
+form:
+  - NOUN
 formed:
   - VERB
 fourth:
   - NOUN
-frank's:
+"frank's":
   - NOUN
 frederick:
   - NOUN
 frequently:
   - ADVERB
+fresh:
+  - ADJECTIVE
 friendly:
   - ADVERB
+frighten:
+  - VERB
 frightened:
   - VERB
 fritz:
   - NOUN
-frost's:
+front:
+  - NOUN
+"frost's":
   - NOUN
 frowned:
+  - VERB
+froze:
   - VERB
 fully:
   - ADVERB
 gaffer:
   - NOUN
-gen'ghis:
+gain:
+  - VERB
+garden:
+  - NOUN
+gardens:
+  - NOUN
+gate:
+  - NOUN
+"gen'ghis":
+  - NOUN
+giant:
   - NOUN
 giver:
   - NOUN
@@ -1166,47 +2887,135 @@ gladly:
   - ADVERB
 gladness:
   - NOUN
+glass:
+  - NOUN
+glasses:
+  - NOUN
+glassy:
+  - ADJECTIVE
+glee:
+  - NOUN
 go-tham:
   - NOUN
+goes:
+  - VERB
 gold-smith:
   - NOUN
 good-by:
   - NOUN
 gotham:
   - NOUN
+gown:
+  - NOUN
+grandpa:
+  - NOUN
+grapevine:
+  - NOUN
+grassy:
+  - ADJECTIVE
+gray:
+  - ADJECTIVE
 greater:
   - NOUN
+greedy:
+  - ADJECTIVE
+green:
+  - ADJECTIVE
+grow:
+  - VERB
 growing:
   - VERB
+grown:
+  - VERB
+guards:
+  - NOUN
+guests:
+  - NOUN
 gur-gling:
   - VERB
+habit:
+  - NOUN
 half-drowned:
   - VERB
+halfway:
+  - ADVERB
+hall:
+  - NOUN
 handful:
   - ADJECTIVE
+handkerchief:
+  - NOUN
+handsome:
+  - ADJECTIVE
+hang:
+  - VERB
+hangs:
+  - VERB
 harmed:
   - VERB
+hatchet:
+  - NOUN
+hate:
+  - VERB
+hearth:
+  - NOUN
+hedge:
+  - NOUN
+heir:
+  - NOUN
+hempen:
+  - ADJECTIVE
 hew:
   - NOUN
 hewed:
   - VERB
+hidden:
+  - VERB
+hills:
+  - NOUN
 hin-dered:
   - VERB
+hoe:
+  - VERB
+hook:
+  - NOUN
 hopping:
   - VERB
 horatius:
   - NOUN
+horn:
+  - NOUN
 horrible:
   - ADJECTIVE
-horse's:
+"horse's":
   - NOUN
-hunts-men's:
+horse-hairs:
+  - NOUN
+horsemen:
+  - NOUN
+hounds:
+  - NOUN
+hour:
+  - NOUN
+hunt:
+  - VERB
+"hunts-men's":
   - NOUN
 hurrah:
   - INTERJECTION
-husband's:
+"husband's":
   - NOUN
-isn't:
+huts:
+  - NOUN
+ice-bergs:
+  - NOUN
+idle:
+  - ADJECTIVE
+ill-doers:
+  - NOUN
+inside:
+  - ADVERB
+"isn't":
   - VERB
 israel:
   - NOUN
@@ -1214,36 +3023,87 @@ itself:
   - PRONOUN
 jane:
   - NOUN
-john's:
+"john's":
+  - NOUN
+joke:
+  - NOUN
+journey:
   - NOUN
 joyful:
   - ADJECTIVE
+judge:
+  - NOUN
 july:
   - NOUN
+jumps:
+  - VERB
 june:
   - NOUN
 keeping:
   - VERB
+keeps:
+  - VERB
+kettledrum:
+  - NOUN
+key:
+  - NOUN
 khan:
   - NOUN
 kindhearted:
   - VERB
 kindness:
   - NOUN
+kinds:
+  - NOUN
+kings:
+  - NOUN
+kiss:
+  - VERB
+kite:
+  - NOUN
 kitty:
   - NOUN
+knife:
+  - NOUN
+knows:
+  - VERB
 ladder:
   - NOUN
+ladders:
+  - NOUN
+laid:
+  - VERB
+lamb:
+  - NOUN
+lame:
+  - ADJECTIVE
+lantern:
+  - NOUN
+late:
+  - ADJECTIVE
 laughing:
   - VERB
 laughter:
   - NOUN
 lazily:
   - ADVERB
+lead:
+  - VERB
+leap:
+  - VERB
 leaping:
   - VERB
+least:
+  - ADJECTIVE: 0.5
+  - ADVERB: 0.5
+leaves:
+  - NOUN
 leaving:
   - VERB
+leg:
+  - NOUN
+legs:
+  - NOUN
 leonidas:
   - NOUN
 letter:
@@ -1254,42 +3114,110 @@ lightly:
   - ADVERB
 lightning:
   - VERB
+limbs:
+  - NOUN
 limping:
   - VERB
 lo:
   - INTERJECTION
+lock:
+  - NOUN
 locked:
   - VERB
+locusts:
+  - NOUN
 lonely:
   - ADVERB
+loose:
+  - ADJECTIVE
+loss:
+  - NOUN
 loudly:
   - ADVERB
+low:
+  - ADJECTIVE
 low-ered:
   - VERB
-maiden's:
+luck:
   - NOUN
+lute:
+  - NOUN
+"maiden's":
+  - NOUN
+makes:
+  - VERB
+manage:
+  - VERB
+march:
+  - VERB
 marched:
   - VERB
 marigold:
   - NOUN
+market:
+  - NOUN
+marry:
+  - VERB
+meant:
+  - VERB
+meet:
+  - VERB
+metals:
+  - NOUN
+mice:
+  - NOUN
+midst:
+  - NOUN
+miles:
+  - NOUN
+milk:
+  - NOUN
+minds:
+  - NOUN
 mine:
   - PRONOUN
+minutes:
+  - NOUN
 missed:
   - VERB
+mist:
+  - NOUN
 mixing:
   - VERB
+month:
+  - NOUN
+moon:
+  - NOUN
+moss:
+  - NOUN
+mount:
+  - VERB
+mountain:
+  - NOUN
+mountains:
+  - NOUN
 mounted:
   - VERB
+mouths:
+  - NOUN
 moving:
   - VERB
 myself:
   - PRONOUN
 naked:
   - VERB
+names:
+  - NOUN
+narrow:
+  - ADJECTIVE
 native:
   - ADJECTIVE
 nearly:
   - ADVERB
+neat:
+  - ADJECTIVE
+needles:
+  - NOUN
 nero:
   - NOUN
 new-gate:
@@ -1298,13 +3226,35 @@ nick-named:
   - VERB
 nimbly:
   - ADVERB
+no-body--no:
+  - PRONOUN
+noble:
+  - ADJECTIVE
 nobody:
   - PRONOUN
 non-sense:
   - NOUN
+notice:
+  - NOUN
 number:
   - NOUN
+nut:
+  - NOUN
+oar:
+  - NOUN
+oars:
+  - NOUN
+objects:
+  - NOUN
+occur:
+  - VERB
+ocean:
+  - NOUN
 offer:
+  - NOUN
+office:
+  - NOUN
+officers:
   - NOUN
 oldest:
   - ADJECTIVE
@@ -1312,9 +3262,27 @@ oliver:
   - NOUN
 others:
   - NOUN
+ought:
+  - VERB
+outdoors:
+  - ADVERB
+outright:
+  - ADVERB
+outside:
+  - ADVERB
+oven:
+  - NOUN
 owner:
   - NOUN
+owns:
+  - VERB
 oxford:
+  - NOUN
+pail:
+  - NOUN
+pair:
+  - NOUN
+pairs:
   - NOUN
 panting:
   - VERB
@@ -1322,19 +3290,41 @@ paper:
   - NOUN
 parted:
   - VERB
+parts:
+  - NOUN
+party:
+  - NOUN
 passing:
   - VERB
 paused:
   - VERB
 paved:
   - VERB
+pavements:
+  - NOUN
+paw:
+  - NOUN
+pay:
+  - VERB
+peace:
+  - NOUN
 peaceful:
   - ADJECTIVE
+peas:
+  - NOUN
+peg:
+  - NOUN
+peril:
+  - NOUN
 persians:
   - NOUN
+person:
+  - NOUN
+persuade:
+  - VERB
 philip:
   - NOUN
-philip's:
+"philip's":
   - NOUN
 philistine:
   - NOUN
@@ -1344,9 +3334,23 @@ picked:
   - VERB
 picking:
   - VERB
+pile:
+  - NOUN
 piled:
   - VERB
+pipe:
+  - NOUN
+pitch:
+  - NOUN
 pitcher:
+  - NOUN
+places:
+  - NOUN
+plain:
+  - ADJECTIVE
+plains:
+  - NOUN
+plan:
   - NOUN
 planning:
   - VERB
@@ -1354,81 +3358,217 @@ planted:
   - VERB
 played:
   - VERB
+playmates:
+  - NOUN
+pleasant:
+  - ADJECTIVE
+pleasure:
+  - NOUN
+plenty:
+  - NOUN
+pocket:
+  - NOUN
+points:
+  - NOUN
+pole:
+  - NOUN
+polite:
+  - ADJECTIVE
 poll:
   - NOUN
 popped:
   - VERB
-porsena's:
+"porsena's":
+  - NOUN
+post:
+  - NOUN
+posts:
+  - NOUN
+potato:
   - NOUN
 praised:
   - VERB
 praising:
   - VERB
+precedes:
+  - VERB
 preceding:
   - VERB
+prefixes:
+  - NOUN
+present:
+  - NOUN: 0.4
+  - ADJECTIVE: 0.4
+  - VERB: 0.2
 previous:
   - ADJECTIVE
 pricked:
   - VERB
+prize:
+  - NOUN
+profit:
+  - NOUN
 promised:
   - VERB
+proud:
+  - ADJECTIVE
+prudent:
+  - ADJECTIVE
 prussia:
   - NOUN
 pulling:
   - VERB
 punished:
   - VERB
+pure:
+  - ADJECTIVE
+quick:
+  - ADJECTIVE
+quivers:
+  - VERB
+rabbits:
+  - NOUN
 ragged:
   - VERB
+rain:
+  - NOUN
+raindrops:
+  - NOUN
 raised:
   - VERB
+raisins:
+  - NOUN
 raleigh:
+  - NOUN
+rang:
+  - VERB
+rascal:
   - NOUN
 rather:
   - ADVERB
+rats:
+  - NOUN
+reins:
+  - NOUN
 remember:
   - NOUN
 remembered:
   - VERB
 required:
   - VERB
+rests:
+  - VERB
+return:
+  - VERB
 richard:
   - NOUN
+rid:
+  - ADJECTIVE
+rides:
+  - VERB
 righted:
   - VERB
 ringer:
   - NOUN
 ringing:
   - VERB
+rings:
+  - NOUN
+risk:
+  - NOUN
+roadside:
+  - NOUN
 roaring:
+  - VERB
+roast:
   - VERB
 roasting:
   - VERB
+robe:
+  - NOUN
 robin:
   - NOUN
+roll:
+  - VERB
 rolled:
   - VERB
 rolling:
   - VERB
 roomful:
   - ADJECTIVE
+rough:
+  - ADJECTIVE
 row:
+  - NOUN
+rule:
   - NOUN
 rumpelstiltskin:
   - NOUN
+rusty:
+  - ADJECTIVE
 safely:
   - ADVERB
+sail:
+  - VERB
+sails:
+  - NOUN
+sake:
+  - NOUN
+same:
+  - ADJECTIVE
+sand:
+  - NOUN
+sang:
+  - VERB
+sauce:
+  - NOUN
+saucy:
+  - ADJECTIVE
+sayings:
+  - NOUN
 scorched:
   - VERB
 scotch-men:
   - NOUN
+search:
+  - NOUN
+seaside:
+  - NOUN
+seat:
+  - NOUN
+second:
+  - ADJECTIVE
 seed:
+  - VERB
+seek:
+  - VERB
+seem:
+  - VERB
+seems:
+  - VERB
+sell:
   - VERB
 sending:
   - VERB
+senses:
+  - NOUN
 separately:
   - ADVERB
 september:
+  - NOUN
+servant:
+  - NOUN
+seven:
+  - ADJECTIVE
+seventh:
+  - ADJECTIVE
+sew:
+  - VERB
+shadow:
+  - NOUN
+shallow:
+  - ADJECTIVE
+shame:
   - NOUN
 shamed:
   - VERB
@@ -1436,25 +3576,69 @@ shameful:
   - ADJECTIVE
 sheepshanks:
   - NOUN
+shepherd:
+  - NOUN
+sheriff:
+  - NOUN
+shield:
+  - NOUN
+shields:
+  - NOUN
+shines:
+  - VERB
+shiny:
+  - ADJECTIVE
+shone:
+  - VERB
+shop:
+  - NOUN
+shot:
+  - VERB
 shoulder:
   - NOUN
 shouted:
   - VERB
 shouting:
   - VERB
+shouts:
+  - VERB
 shyly:
   - ADVERB
+sick:
+  - ADJECTIVE
+sides:
+  - NOUN
+sill:
+  - NOUN
 simply:
   - ADVERB
 since:
   - PREPOSITION: 0.4
   - CONJUNCTION: 0.4
   - ADVERB: 0.2
+single:
+  - ADJECTIVE
+sink:
+  - VERB
+sixteen:
+  - ADJECTIVE
+sixth:
+  - ADJECTIVE
+size:
+  - NOUN
 skated:
   - VERB
 skating:
   - VERB
+skill:
+  - NOUN
+slates:
+  - NOUN
+slave:
+  - NOUN
 sled:
+  - VERB
+sleeps:
   - VERB
 sling:
   - VERB
@@ -1464,101 +3648,243 @@ slipper:
   - NOUN
 smallest:
   - ADJECTIVE
+smile:
+  - NOUN
 smoking:
   - VERB
 snatched:
   - VERB
 softly:
   - ADVERB
+soil:
+  - NOUN
+sold:
+  - VERB
+solid:
+  - ADJECTIVE
+somewhere:
+  - ADVERB
+sorry:
+  - ADJECTIVE
+sounds:
+  - VERB
 spar-kled:
   - VERB
 sparkled:
   - VERB
+speck:
+  - NOUN
 speed:
+  - VERB
+spell:
+  - NOUN
+spent:
   - VERB
 spilled:
   - VERB
+spindles:
+  - NOUN
 sprawled:
+  - VERB
+sprinkle:
   - VERB
 sprinkled:
   - VERB
+spun:
+  - VERB
 stable:
   - ADJECTIVE
+staid:
+  - VERB: 0.6
+  - ADJECTIVE: 0.4
+stair:
+  - NOUN
 standing:
+  - VERB
+starves:
   - VERB
 starving:
   - VERB
 steed:
   - VERB
+stem:
+  - NOUN
+sticky:
+  - ADJECTIVE
 stifling:
   - VERB
 stinging:
   - VERB
+stir:
+  - VERB
 stocking:
   - NOUN
+stole:
+  - VERB
+stone-yard:
+  - NOUN
+stormy:
+  - ADJECTIVE
+stove:
+  - NOUN
+straight:
+  - ADJECTIVE
+stray:
+  - VERB
+stream:
+  - NOUN
+strike:
+  - VERB
+strikes:
+  - VERB
 striking:
   - VERB
-sue's:
+strips:
+  - NOUN
+stuff:
+  - NOUN
+stung:
+  - VERB
+"sue's":
+  - NOUN
+suffixes:
   - NOUN
 summer:
   - NOUN
+sunset:
+  - NOUN
+sup:
+  - VERB
 supper:
   - NOUN
 sur-prised:
   - VERB
 surely:
   - ADVERB
+swam:
+  - VERB
+swamps:
+  - NOUN
 swede:
   - NOUN
+swim:
+  - VERB
 swimmer:
   - NOUN
+swung:
+  - VERB
+takes:
+  - VERB
 taking:
   - VERB
+tale:
+  - NOUN
 talked:
   - VERB
 tallest:
   - ADJECTIVE
 tasted:
   - VERB
+teach:
+  - VERB
+tears:
+  - NOUN
 telling:
+  - VERB
+tells:
   - VERB
 tending:
   - VERB
+tent:
+  - NOUN
+terrific:
+  - ADJECTIVE
 themselves:
   - PRONOUN
 thinking:
   - VERB
+thinks:
+  - VERB
+thirst:
+  - NOUN
+thirsty:
+  - ADJECTIVE
+thirteenth:
+  - ADJECTIVE
+thirty:
+  - ADJECTIVE
+thousands:
+  - NOUN
 thrice:
   - NOUN
 thrive:
   - ADJECTIVE
+through-out:
+  - PREPOSITION: 0.5
+  - ADVERB: 0.5
+throw:
+  - VERB
 thunder:
   - NOUN
+thus:
+  - ADVERB
 thy:
+  - NOUN
+ticket:
+  - NOUN
+tide:
   - NOUN
 tied:
   - VERB
+tight:
+  - ADJECTIVE
 tipped:
   - VERB
+to-day:
+  - ADVERB: 0.5
+  - NOUN: 0.5
 to-morrow:
+  - NOUN
+to-night:
+  - ADVERB: 0.5
+  - NOUN: 0.5
+toes:
   - NOUN
 toiled:
   - VERB
 tom,--with:
   - NOUN
+tomahawks:
+  - NOUN
 tommy:
   - NOUN
+tomorrow:
+  - ADVERB
 toss:
+  - NOUN
+tots:
   - NOUN
 touching:
   - VERB
 trained:
   - VERB
+trap:
+  - NOUN
 traveling:
+  - VERB
+treasure:
+  - NOUN
+treasures:
+  - NOUN
+treat:
   - VERB
 treat-ment:
   - NOUN
 treated:
+  - VERB
+tremble:
+  - VERB
+trembles:
   - VERB
 trembling:
   - VERB
@@ -1566,41 +3892,104 @@ tripped:
   - VERB
 trooping:
   - VERB
+trunk:
+  - NOUN
 trying:
   - VERB
+tub:
+  - NOUN
 tumbled:
   - VERB
+tusk:
+  - NOUN
+twelfth:
+  - ADJECTIVE
+twelve--one:
+  - ADJECTIVE
 twenty:
   - NOUN
+unbroken:
+  - ADJECTIVE
+understand:
+  - VERB
+unkind:
+  - ADJECTIVE
 unlocked:
   - VERB
 unloving:
   - VERB
+up-stairs:
+  - ADVERB: 0.6
+  - NOUN: 0.4
 used:
   - VERB
+valley:
+  - NOUN
 vegetable:
   - ADJECTIVE
+vessel:
+  - NOUN
+village:
+  - NOUN
+vine:
+  - NOUN
+vowels:
+  - NOUN
+voyage:
+  - NOUN
 wagged:
+  - VERB
+wake:
   - VERB
 waked:
   - VERB
 walking:
   - VERB
-walter's:
+walks:
+  - VERB
+"walter's":
   - NOUN
 wandered:
   - VERB
 wanting:
   - VERB
+war:
+  - NOUN
+war-rior:
+  - NOUN
+warn:
+  - VERB
+warrior:
+  - NOUN
 washed:
+  - VERB
+washtub:
+  - NOUN
+waste:
+  - VERB
+wealth:
+  - NOUN
+wealthy:
+  - ADJECTIVE
+wear:
   - VERB
 wearing:
   - VERB
+wears:
+  - VERB
+weary:
+  - ADJECTIVE
 weather:
+  - NOUN
+web:
+  - NOUN
+week:
   - NOUN
 weeping:
   - VERB
-what's:
+wet:
+  - ADJECTIVE
+"what's":
   - NOUN
 whatever:
   - PRONOUN
@@ -1610,28 +3999,40 @@ whined:
   - VERB
 whining:
   - VERB
+whisk:
+  - VERB
 whistled:
   - VERB
-whittington's:
+whistles:
+  - VERB
+"whittington's":
   - NOUN
-who's:
+"who's":
   - NOUN
 whoever:
   - PRONOUN
+whole:
+  - ADJECTIVE
+widow:
+  - NOUN
 wil-helm:
   - NOUN
 willful:
   - ADJECTIVE
 william:
   - NOUN
-willie's:
+"willie's":
   - NOUN
 willing:
   - VERB
-wilson's:
+"wilson's":
   - NOUN
 winding:
   - VERB
+winds:
+  - NOUN
+wine:
+  - NOUN
 wing:
   - VERB
 winter:
@@ -1640,19 +4041,56 @@ wisest:
   - ADJECTIVE
 withering:
   - VERB
+woke:
+  - VERB
+wom-an:
+  - NOUN
+women:
+  - NOUN
 wonderfully:
   - ADVERB
 wondering:
   - VERB
+wood:
+  - NOUN
+wooden:
+  - ADJECTIVE
 worked:
   - VERB
+worm:
+  - NOUN
+worn-out:
+  - ADJECTIVE
+worst:
+  - ADJECTIVE: 0.6
+  - ADVERB: 0.4
+worthy:
+  - ADJECTIVE
+wreaths:
+  - NOUN
 wrecked:
   - VERB
+wretch:
+  - NOUN
 wring:
   - VERB
-you're:
+wrist:
+  - NOUN
+written:
+  - VERB
+wrongs:
+  - NOUN
+wrote:
+  - VERB
+yesterday:
+  - ADVERB
+yon:
+  - ADJECTIVE
+"you're":
   - VERB
 youngest:
   - ADJECTIVE
+your-self:
+  - PRONOUN
 yours:
   - PRONOUN
