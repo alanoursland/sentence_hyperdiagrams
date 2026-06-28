@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(PYTHONPATH=src C:/Users/alano/anaconda3/python.exe:*)",
+      "Bash(wc:*)",
+      "Read(//e/Projects/sentence_hyperdiagrams/**)",
+      "Bash(git status:*)"
+    ]
+  }
+}
