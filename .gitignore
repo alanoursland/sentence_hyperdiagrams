@@ -1,3 +1,6 @@
 *.pdf
 component_library
 __pycache__
+.claude
+.agents
+.pytest_cache
