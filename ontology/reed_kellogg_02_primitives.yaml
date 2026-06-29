@@ -62,6 +62,23 @@ rules:
   #     NOUN
   #     SIMPLE_SUBJECT
 
+  # A noun/pronoun after a conjunction can be another simple subject when the
+  # left side is already a simple subject. The optional article is still the
+  # captured child when present.
+  #
+  # Example:
+  #   1 cat
+  #     SIMPLE_SUBJECT ARTICLE NOUN 0
+  #   2 and
+  #     CONJUNCTION
+  #   3 a
+  #     ARTICLE
+  #   4 rat
+  #     NOUN
+  #     SIMPLE_SUBJECT ARTICLE NOUN 3
+  - emit: SIMPLE_SUBJECT
+    pattern: 'SIMPLE_SUBJECT CONJUNCTION @ARTICLE? (NOUN|PRONOUN)'
+
   # A second subject after a conjunction forms a compound subject with the
   # previous subject. Because label matching consumes spans, the rightmost
   # SIMPLE_SUBJECT may already include its article.
