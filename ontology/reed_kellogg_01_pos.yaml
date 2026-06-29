@@ -1045,7 +1045,8 @@ stone:
 three:
   - ADJECTIVE
 "tom's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 until:
   - PREPOSITION
 walk:
@@ -1178,7 +1179,8 @@ midas:
 money:
   - NOUN
 "mother's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 moved:
   - VERB
 music:
@@ -1390,7 +1392,8 @@ drown:
 ducks:
   - NOUN
 "elephant's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 england:
   - NOUN
 fairies:
@@ -1512,7 +1515,8 @@ move:
 named:
   - VERB
 "nat's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 neck:
   - NOUN
 news:
@@ -1661,7 +1665,8 @@ also:
 among:
   - PREPOSITION
 "ann's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 apples:
   - NOUN
 arose:
@@ -1778,7 +1783,8 @@ deep:
 delighted:
   - VERB
 "dick's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 ding:
   - VERB
 disobey:
@@ -1814,7 +1820,8 @@ failure:
 farmer:
   - NOUN
 "farmer's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 farther:
   - NOUN
 fathers:
@@ -1907,11 +1914,13 @@ judges:
 kids:
   - NOUN
 "king's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 kitchen:
   - NOUN
 "kitty's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 lands:
   - NOUN
 laugh:
@@ -1948,11 +1957,13 @@ magic:
 making:
   - VERB
 "man's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 marching:
   - VERB
 "margery's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 mark:
   - NOUN
 masts:
@@ -2119,7 +2130,8 @@ slept:
 smiled:
   - VERB
 "smith's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 smoke:
   - NOUN
 smooth:
@@ -2262,7 +2274,8 @@ yourself:
 "'what":
   - PRONOUN
 "abbot's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 aberbrothock:
   - NOUN
 able:
@@ -2295,7 +2308,8 @@ already:
 anger:
   - NOUN
 "animal's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 answered:
   - VERB
 antonio:
@@ -2307,7 +2321,8 @@ armed:
 armor:
   - NOUN
 "arnold's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 aroused:
   - VERB
 arrange:
@@ -2335,7 +2350,8 @@ bakers:
 bandy:
   - NOUN
 "barber's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 bare:
   - ADJECTIVE
 basin:
@@ -2345,9 +2361,11 @@ bay:
 beads:
   - NOUN
 "bear's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 "bears'":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 beat:
   - VERB
 beaten:
@@ -2383,7 +2401,8 @@ billy:
 birch:
   - NOUN
 "bird's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 bits:
   - NOUN
 blazing:
@@ -2397,11 +2416,13 @@ blown:
 bold:
   - ADJECTIVE
 "bow-man's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 bowed:
   - VERB
 "boy's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 branches:
   - NOUN
 breaking:
@@ -2481,7 +2502,8 @@ changed:
 charmed:
   - VERB
 "charney's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 cheat:
   - VERB
 cheek:
@@ -2537,13 +2559,15 @@ command:
 condition:
   - NOUN
 "cook's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 corn:
   - NOUN
 cornelia:
   - NOUN
 "cornelia's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 corner:
   - NOUN
 cost:
@@ -2599,7 +2623,8 @@ daughters:
 david:
   - NOUN
 "david's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 dazzled:
   - VERB
 deal:
@@ -2637,7 +2662,8 @@ dishes:
 distant:
   - ADJECTIVE
 "doll's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 doors:
   - NOUN
 doubt:
@@ -2738,7 +2764,8 @@ fair:
 fairly:
   - ADVERB
 "fairy's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 faith:
   - NOUN
 falling:
@@ -2764,7 +2791,8 @@ fastened:
 fastenings:
   - NOUN
 "father's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 feared:
   - VERB
 fearing:
@@ -2798,7 +2826,8 @@ firm:
 "fitz-war'ren":
   - NOUN
 "fitz-warren's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 flag-ship:
   - NOUN
 flags:
@@ -2846,7 +2875,8 @@ formed:
 fourth:
   - NOUN
 "frank's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 frederick:
   - NOUN
 frequently:
@@ -2864,7 +2894,8 @@ fritz:
 front:
   - NOUN
 "frost's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 frowned:
   - VERB
 froze:
@@ -2992,7 +3023,8 @@ horn:
 horrible:
   - ADJECTIVE
 "horse's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 horse-hairs:
   - NOUN
 horsemen:
@@ -3004,11 +3036,13 @@ hour:
 hunt:
   - VERB
 "hunts-men's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 hurrah:
   - INTERJECTION
 "husband's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 huts:
   - NOUN
 ice-bergs:
@@ -3028,7 +3062,8 @@ itself:
 jane:
   - NOUN
 "john's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 joke:
   - NOUN
 journey:
@@ -3147,7 +3182,8 @@ luck:
 lute:
   - NOUN
 "maiden's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 makes:
   - VERB
 manage:
@@ -3329,7 +3365,8 @@ persuade:
 philip:
   - NOUN
 "philip's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 philistine:
   - NOUN
 philistines:
@@ -3383,7 +3420,8 @@ poll:
 popped:
   - VERB
 "porsena's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 post:
   - NOUN
 posts:
@@ -3750,7 +3788,8 @@ stuff:
 stung:
   - VERB
 "sue's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 suffixes:
   - NOUN
 summer:
@@ -3952,7 +3991,8 @@ walking:
 walks:
   - VERB
 "walter's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 wandered:
   - VERB
 wanting:
@@ -3994,7 +4034,8 @@ weeping:
 wet:
   - ADJECTIVE
 "what's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 whatever:
   - PRONOUN
 wherever:
@@ -4010,9 +4051,11 @@ whistled:
 whistles:
   - VERB
 "whittington's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 "who's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 whoever:
   - PRONOUN
 whole:
@@ -4026,11 +4069,13 @@ willful:
 william:
   - NOUN
 "willie's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 willing:
   - VERB
 "wilson's":
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_NOUN
 winding:
   - VERB
 winds:

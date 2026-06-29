@@ -49,8 +49,8 @@ labels:
 
 rules:
   # A sentence-initial noun/pronoun forms a simple subject, with an optional
-  # article captured when present. If @ARTICLE? is unmatched, the emitted
-  # SIMPLE_SUBJECT is a leaf label.
+  # article or adjective-style modifier captured when present. If neither
+  # optional capture matches, the emitted SIMPLE_SUBJECT is a leaf label.
   #
   # Example:
   #   0 A
@@ -59,7 +59,7 @@ rules:
   #     NOUN
   #     SIMPLE_SUBJECT NOUN ARTICLE 0
   - emit: SIMPLE_SUBJECT
-    pattern: '(BOF|"."|"?"|"!") @ARTICLE? (NOUN|PRONOUN)'
+    pattern: '(BOF|"."|"?"|"!") (@ADJECTIVE | @ARTICLE)? (NOUN|PRONOUN)'
 
   # Bare example:
   #   24 Ann
@@ -67,8 +67,8 @@ rules:
   #     SIMPLE_SUBJECT
 
   # A noun/pronoun after a conjunction can be another simple subject when the
-  # left side is already a simple subject. The optional article is still the
-  # captured child when present.
+  # left side is already a simple subject. An optional article or
+  # adjective-style modifier is captured when present.
   #
   # Example:
   #   1 cat
@@ -81,7 +81,7 @@ rules:
   #     NOUN
   #     SIMPLE_SUBJECT NOUN ARTICLE 3
   - emit: SIMPLE_SUBJECT
-    pattern: 'SIMPLE_SUBJECT CONJUNCTION @ARTICLE? (NOUN|PRONOUN)'
+    pattern: 'SIMPLE_SUBJECT CONJUNCTION (@ADJECTIVE | @ARTICLE)? (NOUN|PRONOUN)'
 
   # A second subject after a conjunction forms a compound subject with the
   # previous subject. Because label matching consumes spans, the rightmost
@@ -110,12 +110,12 @@ rules:
   #     NOUN
   #     SIMPLE_OBJECT_COMPLEMENT NOUN ARTICLE 15
   - emit: SIMPLE_OBJECT_COMPLEMENT
-    pattern: '(VERB|VERB_PHRASE) @ARTICLE? (NOUN|PRONOUN)'
+    pattern: '(VERB|VERB_PHRASE) (@ADJECTIVE | @ARTICLE)? (NOUN|PRONOUN)'
 
   # A noun/pronoun after a conjunction can be another simple object
   # complement when the left side is already a simple object complement.
   - emit: SIMPLE_OBJECT_COMPLEMENT
-    pattern: 'SIMPLE_OBJECT_COMPLEMENT CONJUNCTION @ARTICLE? (NOUN|PRONOUN)'
+    pattern: 'SIMPLE_OBJECT_COMPLEMENT CONJUNCTION (@ADJECTIVE | @ARTICLE)? (NOUN|PRONOUN)'
 
   # A second object complement after a conjunction forms a compound object
   # complement with the previous object complement.
@@ -132,12 +132,12 @@ rules:
   #     NOUN
   #     SIMPLE_PREPOSITIONAL_PRINCIPAL
   - emit: SIMPLE_PREPOSITIONAL_PRINCIPAL
-    pattern: 'PREPOSITION @ARTICLE? (NOUN|PRONOUN)'
+    pattern: 'PREPOSITION (@ADJECTIVE | @ARTICLE)? (NOUN|PRONOUN)'
 
   # A noun/pronoun after a conjunction can be another simple prepositional
   # principal when the left side is already a simple prepositional principal.
   - emit: SIMPLE_PREPOSITIONAL_PRINCIPAL
-    pattern: 'SIMPLE_PREPOSITIONAL_PRINCIPAL CONJUNCTION @ARTICLE? (NOUN|PRONOUN)'
+    pattern: 'SIMPLE_PREPOSITIONAL_PRINCIPAL CONJUNCTION (@ADJECTIVE | @ARTICLE)? (NOUN|PRONOUN)'
 
   # A second prepositional principal after a conjunction forms a compound
   # prepositional principal with the previous prepositional principal.

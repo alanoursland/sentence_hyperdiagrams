@@ -99,6 +99,31 @@ def test_simple_subject_after_literal_period():
     )
 
 
+def test_simple_subject_can_capture_adjective_modifier():
+    anns = [
+        TokenAnnotation(index=0, token=".", labels=[Label("PERIOD")]),
+        TokenAnnotation(index=1, token="Tom's", labels=[
+            Label("ADJECTIVE"),
+            Label("POSSESSIVE_NOUN"),
+        ]),
+        TokenAnnotation(index=2, token="nag", labels=[Label("NOUN")]),
+    ]
+
+    emitted = apply_rule_at(
+        anns,
+        token_index=2,
+        emit="SIMPLE_SUBJECT",
+        pattern='(BOF|"."|"?"|"!") @ADJECTIVE? @ARTICLE? (NOUN|PRONOUN)',
+    )
+
+    assert emitted == Label(
+        name="SIMPLE_SUBJECT",
+        child_prev="ADJECTIVE",
+        child_curr="NOUN",
+        index_prev=1,
+    )
+
+
 def test_pattern_does_not_treat_period_label_as_literal_period():
     anns = [
         TokenAnnotation(index=0, token="not-a-dot", labels=[Label("PERIOD")]),

@@ -536,8 +536,11 @@ def classify_token(
         return [("VERB", 1.0)]
     if any(word.endswith(s) for s in ("'m", "'re", "'ve", "'ll", "'d")):
         return [("VERB", 1.0)]
-    if word.endswith("'s"):
-        return [("NOUN", 1.0)]
+
+    # Keep possessive forms whole for now. In RK terms they remain possessive
+    # nouns by form, while functioning adjectivally before the following noun.
+    if word.endswith("'s") or word.endswith("s'"):
+        return [("ADJECTIVE", 1.0), ("POSSESSIVE_NOUN", 1.0)]
 
     # Proper noun detection: only appears capitalized.
     if all(f[0].isupper() for f in word_forms) and word[0].isalpha():

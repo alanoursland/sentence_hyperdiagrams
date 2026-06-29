@@ -122,6 +122,36 @@ def test_apply_rule_transform_uses_period_as_boundary():
     assert result[1].labels == [Label("SIMPLE_SUBJECT")]
 
 
+def test_apply_rule_transform_subject_allows_possessive_modifier():
+    anns = [
+        TokenAnnotation(index=0, token=".", labels=[Label("PERIOD")]),
+        TokenAnnotation(index=1, token="Tom's", labels=[
+            Label("ADJECTIVE"),
+            Label("POSSESSIVE_NOUN"),
+        ]),
+        TokenAnnotation(index=2, token="nag", labels=[Label("NOUN")]),
+    ]
+    rules = load_rules({
+        "rules": [
+            {
+                "emit": "SIMPLE_SUBJECT",
+                "pattern": '(BOF|"."|"?"|"!") @ADJECTIVE? @ARTICLE? (NOUN|PRONOUN)',
+            },
+        ],
+    })
+
+    result = apply_rule_transform(anns, rules)
+
+    assert result[2].labels == [
+        Label(
+            "SIMPLE_SUBJECT",
+            child_prev="ADJECTIVE",
+            child_curr="NOUN",
+            index_prev=1,
+        )
+    ]
+
+
 def test_apply_rule_transform_adds_simple_object_complement():
     anns = [
         TokenAnnotation(index=0, token="has", labels=[Label("VERB")]),
