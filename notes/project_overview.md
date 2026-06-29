@@ -41,7 +41,7 @@ thought) and generation (composing parts of thought into text).
 
 Every annotation is a **label** — a tuple attached to a single token:
 
-    [name, child_prev, child_curr, index_prev, parameter]
+    [name, child_curr, child_prev, index_prev, parameter]
 
 Each label creates a binary tree node by linking a label on the current token
 to a label on a previous token. Tokens themselves are labels without children

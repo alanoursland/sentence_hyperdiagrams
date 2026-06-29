@@ -113,7 +113,25 @@ OBJECT_COMPLEMENT:
   description: >
     Completes the predicate and names the receiver of the act.
     What modern grammar calls the direct object. "Whatever fills
-    out, or completes, is a Complement."
+    out, or completes, is a Complement." In this ontology,
+    OBJECT_COMPLEMENT is the general Reed-Kellogg concept; concrete
+    annotation may use SIMPLE_OBJECT_COMPLEMENT or
+    COMPOUND_OBJECT_COMPLEMENT.
+  source: Reed & Kellogg, Higher Lessons in English
+
+SIMPLE_OBJECT_COMPLEMENT:
+  description: >
+    An object complement consisting of one complement head, with any
+    attached modifiers included in the complement constituent. This
+    is the non-compound case of the Reed-Kellogg object complement.
+  source: Reed & Kellogg, Higher Lessons in English
+
+COMPOUND_OBJECT_COMPLEMENT:
+  description: >
+    An object complement made of two or more object-complement
+    elements of equal rank, connected by a conjunction expressed or
+    understood. This is the object-complement-specific form of
+    Reed-Kellogg's compound construction.
   source: Reed & Kellogg, Higher Lessons in English
 
 ATTRIBUTE_COMPLEMENT:
@@ -171,6 +189,31 @@ PREPOSITIONAL_PHRASE:
     the preposition, its object (a noun or pronoun), and any
     modifiers of that object. Functions as either an adjective
     phrase or an adverb phrase.
+  source: Reed & Kellogg, Higher Lessons in English
+
+PREPOSITIONAL_PRINCIPAL:
+  description: >
+    The principal word or principal constituent of a prepositional
+    phrase. Reed-Kellogg describes the preposition as introducing
+    the phrase and the following noun or pronoun as the principal
+    word of the phrase. In this ontology, PREPOSITIONAL_PRINCIPAL is
+    the general concept; concrete annotation may use
+    SIMPLE_PREPOSITIONAL_PRINCIPAL or COMPOUND_PREPOSITIONAL_PRINCIPAL.
+  source: Reed & Kellogg, Higher Lessons in English
+
+SIMPLE_PREPOSITIONAL_PRINCIPAL:
+  description: >
+    A prepositional principal consisting of one principal head, with
+    any attached modifiers included in the constituent. This is the
+    non-compound case of the principal word in a prepositional phrase.
+  source: Reed & Kellogg, Higher Lessons in English
+
+COMPOUND_PREPOSITIONAL_PRINCIPAL:
+  description: >
+    A prepositional principal made of two or more principal elements
+    of equal rank, connected by a conjunction expressed or understood.
+    This is the prepositional-principal-specific form of Reed-Kellogg's
+    compound construction.
   source: Reed & Kellogg, Higher Lessons in English
 
 VERB_PHRASE:

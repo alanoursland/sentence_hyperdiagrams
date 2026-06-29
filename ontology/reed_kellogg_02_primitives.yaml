@@ -20,7 +20,7 @@
 #   BOF                   virtual beginning-of-file sentinel at index -1
 #
 # Matching a built label consumes the full span of that label. For example,
-# SIMPLE_SUBJECT ARTICLE NOUN 3 attached to token 4 covers tokens 3..4; a
+# SIMPLE_SUBJECT NOUN ARTICLE 3 attached to token 4 covers tokens 3..4; a
 # later rule matching SIMPLE_SUBJECT on token 4 resumes scanning before token 3.
 #
 # If a rule emits a linking label, the final/current matched label supplies
@@ -42,6 +42,10 @@ output_pass: primitives
 labels:
   - SIMPLE_SUBJECT
   - COMPOUND_SUBJECT
+  - SIMPLE_OBJECT_COMPLEMENT
+  - COMPOUND_OBJECT_COMPLEMENT
+  - SIMPLE_PREPOSITIONAL_PRINCIPAL
+  - COMPOUND_PREPOSITIONAL_PRINCIPAL
 
 rules:
   # A sentence-initial noun/pronoun forms a simple subject, with an optional
@@ -53,7 +57,7 @@ rules:
   #     ARTICLE
   #   1 cat
   #     NOUN
-  #     SIMPLE_SUBJECT ARTICLE NOUN 0
+  #     SIMPLE_SUBJECT NOUN ARTICLE 0
   - emit: SIMPLE_SUBJECT
     pattern: '(BOF|"."|"?"|"!") @ARTICLE? (NOUN|PRONOUN)'
 
@@ -68,14 +72,14 @@ rules:
   #
   # Example:
   #   1 cat
-  #     SIMPLE_SUBJECT ARTICLE NOUN 0
+  #     SIMPLE_SUBJECT NOUN ARTICLE 0
   #   2 and
   #     CONJUNCTION
   #   3 a
   #     ARTICLE
   #   4 rat
   #     NOUN
-  #     SIMPLE_SUBJECT ARTICLE NOUN 3
+  #     SIMPLE_SUBJECT NOUN ARTICLE 3
   - emit: SIMPLE_SUBJECT
     pattern: 'SIMPLE_SUBJECT CONJUNCTION @ARTICLE? (NOUN|PRONOUN)'
 
@@ -85,11 +89,57 @@ rules:
   #
   # Example:
   #   1 cat
-  #     SIMPLE_SUBJECT ARTICLE NOUN 0
+  #     SIMPLE_SUBJECT NOUN ARTICLE 0
   #   2 and
   #     CONJUNCTION
   #   4 rat
-  #     SIMPLE_SUBJECT ARTICLE NOUN 3
+  #     SIMPLE_SUBJECT NOUN ARTICLE 3
   #     COMPOUND_SUBJECT SIMPLE_SUBJECT SIMPLE_SUBJECT 1
   - emit: COMPOUND_SUBJECT
     pattern: '@SIMPLE_SUBJECT CONJUNCTION SIMPLE_SUBJECT'
+
+  # A noun/pronoun after a verb or verb phrase forms a simple object
+  # complement, with an optional article captured when present.
+  #
+  # Example:
+  #   14 has
+  #     VERB
+  #   15 a
+  #     ARTICLE
+  #   16 rat
+  #     NOUN
+  #     SIMPLE_OBJECT_COMPLEMENT NOUN ARTICLE 15
+  - emit: SIMPLE_OBJECT_COMPLEMENT
+    pattern: '(VERB|VERB_PHRASE) @ARTICLE? (NOUN|PRONOUN)'
+
+  # A noun/pronoun after a conjunction can be another simple object
+  # complement when the left side is already a simple object complement.
+  - emit: SIMPLE_OBJECT_COMPLEMENT
+    pattern: 'SIMPLE_OBJECT_COMPLEMENT CONJUNCTION @ARTICLE? (NOUN|PRONOUN)'
+
+  # A second object complement after a conjunction forms a compound object
+  # complement with the previous object complement.
+  - emit: COMPOUND_OBJECT_COMPLEMENT
+    pattern: '@SIMPLE_OBJECT_COMPLEMENT CONJUNCTION SIMPLE_OBJECT_COMPLEMENT'
+
+  # A noun/pronoun after a preposition forms the simple principal of a
+  # prepositional phrase, with an optional article captured when present.
+  #
+  # Example:
+  #   21 at
+  #     PREPOSITION
+  #   22 Ann
+  #     NOUN
+  #     SIMPLE_PREPOSITIONAL_PRINCIPAL
+  - emit: SIMPLE_PREPOSITIONAL_PRINCIPAL
+    pattern: 'PREPOSITION @ARTICLE? (NOUN|PRONOUN)'
+
+  # A noun/pronoun after a conjunction can be another simple prepositional
+  # principal when the left side is already a simple prepositional principal.
+  - emit: SIMPLE_PREPOSITIONAL_PRINCIPAL
+    pattern: 'SIMPLE_PREPOSITIONAL_PRINCIPAL CONJUNCTION @ARTICLE? (NOUN|PRONOUN)'
+
+  # A second prepositional principal after a conjunction forms a compound
+  # prepositional principal with the previous prepositional principal.
+  - emit: COMPOUND_PREPOSITIONAL_PRINCIPAL
+    pattern: '@SIMPLE_PREPOSITIONAL_PRINCIPAL CONJUNCTION SIMPLE_PREPOSITIONAL_PRINCIPAL'

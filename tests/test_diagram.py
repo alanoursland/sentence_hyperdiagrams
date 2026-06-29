@@ -30,17 +30,17 @@ class TestLabel:
         label = Label(name="NOUN_PHRASE", child_prev="DET",
                       child_curr="NOUN", index_prev=0)
         assert not label.is_leaf
-        assert label.to_line() == "NOUN_PHRASE DET NOUN 0"
+        assert label.to_line() == "NOUN_PHRASE NOUN DET 0"
 
     def test_label_with_parameter(self):
         label = Label(name="NP", child_prev="DET", child_curr="NOUN",
                       index_prev=0, parameter=2)
-        assert label.to_line() == "NP DET NOUN 0 2"
+        assert label.to_line() == "NP NOUN DET 0 2"
 
     def test_label_with_weight(self):
         label = Label(name="NP", child_prev="DET", child_curr="NOUN",
                       index_prev=0, parameter=0, weight=0.8)
-        assert label.to_line() == "NP DET NOUN 0 0 0.8"
+        assert label.to_line() == "NP NOUN DET 0 0 0.8"
 
     def test_weighted_leaf_label(self):
         label = Label(name="VERB", weight=0.8)
@@ -62,7 +62,7 @@ SIMPLE_PASS = """\
   DET
 1 cat
   NOUN
-  NOUN_PHRASE DET NOUN 0
+  NOUN_PHRASE NOUN DET 0
 2 sat
   VERB
 3 .
@@ -118,7 +118,7 @@ class TestParsing:
         assert len(result[1].labels) == 1
 
     def test_label_with_parameter_and_weight(self):
-        text = "0 The\n  DET\n1 cat\n  NP DET NOUN 0 1 0.75\n"
+        text = "0 The\n  DET\n1 cat\n  NP NOUN DET 0 1 0.75\n"
         result = parse_pass(text)
         label = result[1].labels[0]
         assert label.parameter == 1
@@ -218,7 +218,7 @@ PASS_B = """\
 1 cat
   AGENT
 2 sat
-  ACT-ON AGENT VERB 1
+  ACT-ON VERB AGENT 1
 """
 
 
@@ -260,10 +260,10 @@ VALID_DIAGRAM = """\
   DET
 1 cat
   NOUN
-  SUBJECT DET NOUN 0
+  SUBJECT NOUN DET 0
 2 sat
   VERB
-  PREDICATE SUBJECT VERB 1
+  PREDICATE VERB SUBJECT 1
 """
 
 BAD_CHILD_CURR = """\
@@ -273,7 +273,7 @@ BAD_CHILD_CURR = """\
   NOUN
 2 .
   PUNCT
-  PREDICATE NOUN VERB 1
+  PREDICATE VERB NOUN 1
 """
 
 BAD_CHILD_PREV = """\
@@ -281,10 +281,10 @@ BAD_CHILD_PREV = """\
   DET
 1 cat
   NOUN
-  SUBJECT DET NOUN 0
+  SUBJECT NOUN DET 0
 2 sat
   VERB
-  PREDICATE AGENT VERB 1
+  PREDICATE VERB AGENT 1
 """
 
 BAD_INDEX_PREV = """\
@@ -292,7 +292,7 @@ BAD_INDEX_PREV = """\
   DET
 1 cat
   NOUN
-  SUBJECT DET NOUN 99
+  SUBJECT NOUN DET 99
 """
 
 LABEL_ON_WRONG_TOKEN = """\
@@ -309,8 +309,8 @@ LABEL_ON_WRONG_TOKEN = """\
   OBJECT_COMPLEMENT
 4 .
   PUNCT
-  PREDICATE VERB_PHRASE OBJECT_COMPLEMENT 2
-  DECLARATIVE SUBJECT PREDICATE 0
+  PREDICATE OBJECT_COMPLEMENT VERB_PHRASE 2
+  DECLARATIVE PREDICATE SUBJECT 0
 """
 
 

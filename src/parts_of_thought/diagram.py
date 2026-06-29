@@ -15,8 +15,9 @@ class Label:
     """A single label attached to a token.
 
     A leaf label has only a name. A linking label also specifies
-    child_prev, child_curr, and index_prev to connect labels across
-    tokens.
+    child_curr, child_prev, and index_prev to connect labels across
+    tokens. In the serialized file format, child_curr is written first
+    because it is the label on the token where this label is attached.
     """
 
     name: str
@@ -37,7 +38,7 @@ class Label:
                 return f"{self.name} {self.weight}"
             return self.name
 
-        parts = [self.name, self.child_prev, self.child_curr,
+        parts = [self.name, self.child_curr, self.child_prev,
                  str(self.index_prev)]
 
         if self.weight != 1.0:
@@ -84,8 +85,8 @@ def _parse_label(line: str) -> Label:
         )
 
     name = parts[0]
-    child_prev = parts[1]
-    child_curr = parts[2]
+    child_curr = parts[1]
+    child_prev = parts[2]
     index_prev = int(parts[3])
     parameter = int(parts[4]) if len(parts) > 4 else 0
     weight = float(parts[5]) if len(parts) > 5 else 1.0

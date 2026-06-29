@@ -105,7 +105,7 @@ If an optional capture does not match, no capture is recorded for that atom.
 
 Captures are used to construct linking labels:
 
-    emit child_prev child_curr index_prev
+    emit child_curr child_prev index_prev
 
 The current matched label supplies `child_curr`. The last successful `@`
 capture used by the match supplies `child_prev` and `index_prev`.

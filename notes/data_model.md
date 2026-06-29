@@ -59,13 +59,13 @@ linking a label on the same token to a label on a previous token.
 
 A label is a tuple:
 
-    [name, child_prev, child_curr, index_prev, parameter, weight]
+    [name, child_curr, child_prev, index_prev, parameter, weight]
 
 | Field        | Description                                              |
 |--------------|----------------------------------------------------------|
 | `name`       | Named identifier of the new tree node this label creates |
-| `child_prev` | Named identifier of the label on the previous token      |
 | `child_curr` | Named identifier of the label on the current token       |
+| `child_prev` | Named identifier of the label on the previous token      |
 | `index_prev` | Token index where `child_prev` is located                |
 | `parameter`  | Optional 8-bit value (0-255) for ordinal variants of `name` |
 | `weight`     | Confidence or strength of this label                     |
@@ -94,6 +94,10 @@ by chaining these pairwise links — forming relationships between relationships
 
 Multiple labels on a single token can participate in different parts of the
 tree or build overlapping structures from the same token sequence.
+
+The diagram file writes `child_curr` before `child_prev`. This keeps the
+current token's label adjacent to the label being emitted, while `index_prev`
+still points to the linked earlier token.
 
 The `parameter` field allows up to 256 ordinal variants of the same node name,
 distinguishing otherwise identical node types.

@@ -120,3 +120,157 @@ def test_apply_rule_transform_uses_period_as_boundary():
     result = apply_rule_transform(anns, rules)
 
     assert result[1].labels == [Label("SIMPLE_SUBJECT")]
+
+
+def test_apply_rule_transform_adds_simple_object_complement():
+    anns = [
+        TokenAnnotation(index=0, token="has", labels=[Label("VERB")]),
+        TokenAnnotation(index=1, token="a", labels=[Label("ARTICLE")]),
+        TokenAnnotation(index=2, token="rat", labels=[Label("NOUN")]),
+    ]
+    rules = load_rules({
+        "rules": [
+            {
+                "emit": "SIMPLE_OBJECT_COMPLEMENT",
+                "pattern": "(VERB|VERB_PHRASE) @ARTICLE? (NOUN|PRONOUN)",
+            },
+        ],
+    })
+
+    result = apply_rule_transform(anns, rules)
+
+    assert result[2].labels == [
+        Label(
+            "SIMPLE_OBJECT_COMPLEMENT",
+            child_prev="ARTICLE",
+            child_curr="NOUN",
+            index_prev=1,
+        )
+    ]
+
+
+def test_apply_rule_transform_adds_compound_object_complement():
+    anns = [
+        TokenAnnotation(index=0, token="has", labels=[Label("VERB")]),
+        TokenAnnotation(index=1, token="a", labels=[Label("ARTICLE")]),
+        TokenAnnotation(index=2, token="cat", labels=[Label("NOUN")]),
+        TokenAnnotation(index=3, token="and", labels=[Label("CONJUNCTION")]),
+        TokenAnnotation(index=4, token="a", labels=[Label("ARTICLE")]),
+        TokenAnnotation(index=5, token="rat", labels=[Label("NOUN")]),
+    ]
+    rules = load_rules({
+        "rules": [
+            {
+                "emit": "SIMPLE_OBJECT_COMPLEMENT",
+                "pattern": "(VERB|VERB_PHRASE) @ARTICLE? (NOUN|PRONOUN)",
+            },
+            {
+                "emit": "SIMPLE_OBJECT_COMPLEMENT",
+                "pattern": (
+                    "SIMPLE_OBJECT_COMPLEMENT CONJUNCTION "
+                    "@ARTICLE? (NOUN|PRONOUN)"
+                ),
+            },
+            {
+                "emit": "COMPOUND_OBJECT_COMPLEMENT",
+                "pattern": (
+                    "@SIMPLE_OBJECT_COMPLEMENT CONJUNCTION "
+                    "SIMPLE_OBJECT_COMPLEMENT"
+                ),
+            },
+        ],
+    })
+
+    result = apply_rule_transform(anns, rules)
+
+    assert result[5].labels == [
+        Label(
+            "SIMPLE_OBJECT_COMPLEMENT",
+            child_prev="ARTICLE",
+            child_curr="NOUN",
+            index_prev=4,
+        ),
+        Label(
+            "COMPOUND_OBJECT_COMPLEMENT",
+            child_prev="SIMPLE_OBJECT_COMPLEMENT",
+            child_curr="SIMPLE_OBJECT_COMPLEMENT",
+            index_prev=2,
+        ),
+    ]
+
+
+def test_apply_rule_transform_adds_simple_prepositional_principal():
+    anns = [
+        TokenAnnotation(index=0, token="at", labels=[Label("PREPOSITION")]),
+        TokenAnnotation(index=1, token="a", labels=[Label("ARTICLE")]),
+        TokenAnnotation(index=2, token="cat", labels=[Label("NOUN")]),
+    ]
+    rules = load_rules({
+        "rules": [
+            {
+                "emit": "SIMPLE_PREPOSITIONAL_PRINCIPAL",
+                "pattern": "PREPOSITION @ARTICLE? (NOUN|PRONOUN)",
+            },
+        ],
+    })
+
+    result = apply_rule_transform(anns, rules)
+
+    assert result[2].labels == [
+        Label(
+            "SIMPLE_PREPOSITIONAL_PRINCIPAL",
+            child_prev="ARTICLE",
+            child_curr="NOUN",
+            index_prev=1,
+        )
+    ]
+
+
+def test_apply_rule_transform_adds_compound_prepositional_principal():
+    anns = [
+        TokenAnnotation(index=0, token="at", labels=[Label("PREPOSITION")]),
+        TokenAnnotation(index=1, token="a", labels=[Label("ARTICLE")]),
+        TokenAnnotation(index=2, token="cat", labels=[Label("NOUN")]),
+        TokenAnnotation(index=3, token="and", labels=[Label("CONJUNCTION")]),
+        TokenAnnotation(index=4, token="a", labels=[Label("ARTICLE")]),
+        TokenAnnotation(index=5, token="rat", labels=[Label("NOUN")]),
+    ]
+    rules = load_rules({
+        "rules": [
+            {
+                "emit": "SIMPLE_PREPOSITIONAL_PRINCIPAL",
+                "pattern": "PREPOSITION @ARTICLE? (NOUN|PRONOUN)",
+            },
+            {
+                "emit": "SIMPLE_PREPOSITIONAL_PRINCIPAL",
+                "pattern": (
+                    "SIMPLE_PREPOSITIONAL_PRINCIPAL CONJUNCTION "
+                    "@ARTICLE? (NOUN|PRONOUN)"
+                ),
+            },
+            {
+                "emit": "COMPOUND_PREPOSITIONAL_PRINCIPAL",
+                "pattern": (
+                    "@SIMPLE_PREPOSITIONAL_PRINCIPAL CONJUNCTION "
+                    "SIMPLE_PREPOSITIONAL_PRINCIPAL"
+                ),
+            },
+        ],
+    })
+
+    result = apply_rule_transform(anns, rules)
+
+    assert result[5].labels == [
+        Label(
+            "SIMPLE_PREPOSITIONAL_PRINCIPAL",
+            child_prev="ARTICLE",
+            child_curr="NOUN",
+            index_prev=4,
+        ),
+        Label(
+            "COMPOUND_PREPOSITIONAL_PRINCIPAL",
+            child_prev="SIMPLE_PREPOSITIONAL_PRINCIPAL",
+            child_curr="SIMPLE_PREPOSITIONAL_PRINCIPAL",
+            index_prev=2,
+        ),
+    ]

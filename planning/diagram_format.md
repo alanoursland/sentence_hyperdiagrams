@@ -27,19 +27,19 @@ they are attached to. A token may have zero or more labels.
       DET
     1 cat
       NOUN
-      NOUN_PHRASE DET NOUN 0
+      NOUN_PHRASE NOUN DET 0
 
 ### Label fields
 
 Labels use positional shorthand. Trailing fields may be omitted.
 
-    name [child_prev child_curr index_prev [parameter [weight]]]
+    name [child_curr child_prev index_prev [parameter [weight]]]
 
 | Position | Field | Required | Default |
 |----------|-------|----------|---------|
 | 1 | `name` | yes | — |
-| 2 | `child_prev` | no | (leaf) |
-| 3 | `child_curr` | no | (leaf) |
+| 2 | `child_curr` | no | (leaf) |
+| 3 | `child_prev` | no | (leaf) |
 | 4 | `index_prev` | no | (leaf) |
 | 5 | `parameter` | no | 0 |
 | 6 | `weight` | no | 1.0 |
@@ -49,14 +49,18 @@ directly without linking to other labels.
 
     DET
 
-A name with child_prev, child_curr, and index_prev is a **linking label**
+A name with child_curr, child_prev, and index_prev is a **linking label**
 — it creates a tree node connecting a label on a previous token to a label
 on the current token.
 
-    NOUN_PHRASE DET NOUN 0
+    NOUN_PHRASE NOUN DET 0
 
-The three linking fields (child_prev, child_curr, index_prev) must appear
+The three linking fields (child_curr, child_prev, index_prev) must appear
 together or not at all — you can't specify one without the others.
+
+`child_curr` is written before `child_prev` because it names the label on the
+token where this label is attached. `child_prev` is the linked label at
+`index_prev`.
 
 ## Comments and metadata
 
@@ -107,7 +111,7 @@ must match `tokens.txt` exactly.
       DET
     1 cat
       NOUN
-      NOUN_PHRASE DET NOUN 0
+      NOUN_PHRASE NOUN DET 0
     2 sat
       VERB
     3 on
@@ -116,7 +120,7 @@ must match `tokens.txt` exactly.
       DET
     5 mat
       NOUN
-      NOUN_PHRASE DET NOUN 4
+      NOUN_PHRASE NOUN DET 4
     6 .
       PUNCT
 
@@ -129,13 +133,13 @@ must match `tokens.txt` exactly.
     1 cat
       AGENT
     2 sat
-      ACT-ON AGENT PREPOSITION 1
+      ACT-ON PREPOSITION AGENT 1
     3 on
     4 the
     5 mat
       LOCATION
     6 .
-      SENTENCE ACT-ON PUNCT 2
+      SENTENCE PUNCT ACT-ON 2
 
 ## File extension
 

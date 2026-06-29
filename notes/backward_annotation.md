@@ -32,9 +32,9 @@ A linking label covers the span of its children:
       ARTICLE
     4 rat
       NOUN
-      SUBJECT ARTICLE NOUN 3
+      SUBJECT NOUN ARTICLE 3
 
-The label `SUBJECT ARTICLE NOUN 3` is attached to token `4`, but it covers the
+The label `SUBJECT NOUN ARTICLE 3` is attached to token `4`, but it covers the
 constituent from token `3` through token `4`.
 
 This matters for backward pattern matching. When a rule matches a built label
@@ -69,7 +69,7 @@ rules reuse lower-level structure instead of restating it.
 
 For example, once this has been emitted:
 
-    SUBJECT ARTICLE NOUN 3
+    SUBJECT NOUN ARTICLE 3
 
 a later compound-subject rule can match `SUBJECT` directly. It does not need to
 repeat `ARTICLE? NOUN`.
@@ -101,7 +101,7 @@ Thus:
 
 on token `4` emits:
 
-    SUBJECT ARTICLE NOUN 3
+    SUBJECT NOUN ARTICLE 3
 
 if `ARTICLE` matched token `3` and `NOUN` matched token `4`.
 
@@ -170,7 +170,7 @@ This emits a linking `SUBJECT` when an article is captured:
       ARTICLE
     1 cat
       NOUN
-      SUBJECT ARTICLE NOUN 0
+      SUBJECT NOUN ARTICLE 0
 
 When no article is captured, it emits a leaf `SUBJECT`:
 
@@ -204,14 +204,14 @@ them with a generic `COMPOUND` label:
       ARTICLE
     1 cat
       NOUN
-      SUBJECT ARTICLE NOUN 0
+      SUBJECT NOUN ARTICLE 0
     2 and
       CONJUNCTION
     3 a
       ARTICLE
     4 rat
       NOUN
-      SUBJECT ARTICLE NOUN 3
+      SUBJECT NOUN ARTICLE 3
       COMPOUND SUBJECT SUBJECT 1
 
 This captures the existence of a compound structure, but it loses an important
@@ -261,9 +261,9 @@ the rightmost content token accumulates a chain:
 
     16 rat
       NOUN
-      OBJECT_COMPLEMENT ARTICLE NOUN 15
-      PREDICATE VERB OBJECT_COMPLEMENT 14
-      DECLARATIVE SUBJECT PREDICATE 13
+      OBJECT_COMPLEMENT NOUN ARTICLE 15
+      PREDICATE OBJECT_COMPLEMENT VERB 14
+      DECLARATIVE PREDICATE SUBJECT 13
 
 Each label enables the next:
 
