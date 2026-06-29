@@ -159,6 +159,68 @@ def test_label_span_for_linking_label():
     assert span.right == 1
 
 
+def test_same_name_child_resolves_to_previous_label_on_token():
+    first = Label(
+        name="NOUN",
+        child_prev="ADJECTIVE",
+        child_curr="NOUN",
+        index_prev=1,
+    )
+    second = Label(
+        name="NOUN",
+        child_prev="ARTICLE",
+        child_curr="NOUN",
+        index_prev=0,
+    )
+    anns = [
+        TokenAnnotation(index=0, token="a", labels=[Label("ARTICLE")]),
+        TokenAnnotation(index=1, token="fat", labels=[Label("ADJECTIVE")]),
+        TokenAnnotation(index=2, token="dog", labels=[
+            Label("NOUN"),
+            first,
+            second,
+        ]),
+    ]
+
+    first_span = compute_label_span(anns, token_index=2, label=first)
+    second_span = compute_label_span(anns, token_index=2, label=second)
+
+    assert first_span.left == 1
+    assert first_span.right == 2
+    assert second_span.left == 0
+    assert second_span.right == 2
+
+
+def test_recursive_noun_projection_absorbs_article_and_adjective():
+    anns = [
+        TokenAnnotation(index=0, token="a", labels=[Label("ARTICLE")]),
+        TokenAnnotation(index=1, token="fat", labels=[Label("ADJECTIVE")]),
+        TokenAnnotation(index=2, token="dog", labels=[Label("NOUN")]),
+    ]
+    rules = [
+        Rule(emit="NOUN", pattern="@ADJECTIVE NOUN"),
+        Rule(emit="NOUN", pattern="@ARTICLE NOUN"),
+    ]
+
+    result = apply_rules(anns, rules)
+
+    assert result[2].labels == [
+        Label("NOUN"),
+        Label(
+            "NOUN",
+            child_prev="ADJECTIVE",
+            child_curr="NOUN",
+            index_prev=1,
+        ),
+        Label(
+            "NOUN",
+            child_prev="ARTICLE",
+            child_curr="NOUN",
+            index_prev=0,
+        ),
+    ]
+
+
 def test_compound_subject_consumes_subject_span():
     anns = [
         TokenAnnotation(index=0, token="A", labels=[Label("ARTICLE")]),

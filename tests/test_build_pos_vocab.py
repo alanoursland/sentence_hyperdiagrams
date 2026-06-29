@@ -14,6 +14,17 @@ def test_possessive_forms_are_adjectival_possessive_nouns():
     ]
 
 
+def test_possessive_pronoun_modifiers_are_adjectival_not_nominal():
+    assert classify_token("his", {"his"}, {"his": {"his"}}) == [
+        ("ADJECTIVE", 1.0),
+        ("POSSESSIVE_PRONOUN", 1.0),
+    ]
+    assert classify_token("my", {"my"}, {"my": {"my"}}) == [
+        ("ADJECTIVE", 1.0),
+        ("POSSESSIVE_PRONOUN", 1.0),
+    ]
+
+
 def test_contractions_still_classify_as_verbs():
     assert classify_token("don't", {"don't"}, {"don't": {"don't"}}) == [
         ("VERB", 1.0)

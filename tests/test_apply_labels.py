@@ -152,6 +152,43 @@ def test_apply_rule_transform_subject_allows_possessive_modifier():
     ]
 
 
+def test_apply_rule_transform_builds_recursive_noun_before_role():
+    anns = [
+        TokenAnnotation(index=0, token="has", labels=[Label("VERB")]),
+        TokenAnnotation(index=1, token="a", labels=[Label("ARTICLE")]),
+        TokenAnnotation(index=2, token="fat", labels=[Label("ADJECTIVE")]),
+        TokenAnnotation(index=3, token="dog", labels=[Label("NOUN")]),
+    ]
+    rules = load_rules({
+        "rules": [
+            {"emit": "NOUN", "pattern": "@ADJECTIVE NOUN"},
+            {"emit": "NOUN", "pattern": "@ARTICLE NOUN"},
+            {
+                "emit": "SIMPLE_OBJECT_COMPLEMENT",
+                "pattern": "(VERB|VERB_PHRASE) NOUN",
+            },
+        ],
+    })
+
+    result = apply_rule_transform(anns, rules)
+
+    assert result[3].labels == [
+        Label(
+            "NOUN",
+            child_prev="ADJECTIVE",
+            child_curr="NOUN",
+            index_prev=2,
+        ),
+        Label(
+            "NOUN",
+            child_prev="ARTICLE",
+            child_curr="NOUN",
+            index_prev=1,
+        ),
+        Label("SIMPLE_OBJECT_COMPLEMENT"),
+    ]
+
+
 def test_apply_rule_transform_adds_simple_object_complement():
     anns = [
         TokenAnnotation(index=0, token="has", labels=[Label("VERB")]),

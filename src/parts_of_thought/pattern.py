@@ -216,10 +216,14 @@ def apply_rules(
     ]
 
     for ann in result:
-        for rule in rules:
-            emitted = rule.apply_at(result, ann.index)
-            if emitted is not None:
-                ann.labels.append(emitted)
+        changed = True
+        while changed:
+            changed = False
+            for rule in rules:
+                emitted = rule.apply_at(result, ann.index)
+                if emitted is not None and emitted not in ann.labels:
+                    ann.labels.append(emitted)
+                    changed = True
 
     return result
 
@@ -231,15 +235,20 @@ def compute_label_span(
 ) -> Span:
     """Compute the token span covered by a label instance.
 
-    Duplicate label names are resolved by the first matching label on the
-    referenced token.  Parameter-aware matching can be added when the diagram
-    format starts relying on same-name duplicates.
+    Duplicate label names are resolved by the latest usable matching label on
+    the referenced token. This lets recursive labels such as NOUN build a
+    projection chain on a single token without resolving a child to itself.
     """
     if label.is_leaf:
         return Span(token_index, token_index)
 
     child_prev = _find_label(annotations, label.index_prev, label.child_prev)
-    child_curr = _find_label(annotations, token_index, label.child_curr)
+    child_curr = _find_label(
+        annotations,
+        token_index,
+        label.child_curr,
+        before_label=label,
+    )
 
     if child_prev is None:
         raise ValueError(
@@ -270,7 +279,7 @@ def label_instances_at(
         return []
 
     instances: list[LabelInstance] = []
-    for label in ann.labels:
+    for label in reversed(ann.labels):
         if label.name == name:
             instances.append(
                 LabelInstance(
@@ -548,13 +557,22 @@ def _find_label(
     annotations: list[TokenAnnotation],
     token_index: int | None,
     name: str | None,
+    before_label: Label | None = None,
 ) -> Label | None:
     if token_index is None or name is None:
         return None
     ann = _annotation_at(annotations, token_index)
     if ann is None:
         return None
-    for label in ann.labels:
+
+    labels = ann.labels
+    if before_label is not None:
+        for i, candidate in enumerate(labels):
+            if candidate is before_label:
+                labels = labels[:i]
+                break
+
+    for label in reversed(labels):
         if label.name == name:
             return label
     return None

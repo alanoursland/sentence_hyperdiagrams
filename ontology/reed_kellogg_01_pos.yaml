@@ -46,7 +46,8 @@ is:
 i:
   - PRONOUN
 his:
-  - PRONOUN
+  - ADJECTIVE
+  - POSSESSIVE_PRONOUN
 not:
   - ADVERB
 they:
@@ -87,7 +88,8 @@ little:
 him:
   - PRONOUN
 her:
-  - PRONOUN
+  - ADJECTIVE
+  - POSSESSIVE_PRONOUN
 are:
   - VERB
 were:
@@ -114,7 +116,8 @@ then:
 did:
   - VERB
 my:
-  - PRONOUN
+  - ADJECTIVE
+  - POSSESSIVE_PRONOUN
 we:
   - PRONOUN
 have:
@@ -130,7 +133,8 @@ one:
 came:
   - VERB
 their:
-  - PRONOUN
+  - ADJECTIVE
+  - POSSESSIVE_PRONOUN
 this:
   - PRONOUN
 man:
@@ -148,7 +152,8 @@ out:
 could:
   - VERB
 your:
-  - PRONOUN
+  - ADJECTIVE
+  - POSSESSIVE_PRONOUN
 great:
   - ADJECTIVE
 would:
@@ -285,6 +290,8 @@ house:
 know:
   - VERB
 nest:
+  - NOUN
+  - VERB
   - ADJECTIVE
 shall:
   - VERB
@@ -443,7 +450,8 @@ lad:
 never:
   - ADVERB
 our:
-  - PRONOUN
+  - ADJECTIVE
+  - POSSESSIVE_PRONOUN
 pig:
   - NOUN
 place:
@@ -469,7 +477,8 @@ hands:
 indians:
   - NOUN
 its:
-  - PRONOUN
+  - ADJECTIVE
+  - POSSESSIVE_PRONOUN
 live:
   - ADJECTIVE
 may:
@@ -728,6 +737,7 @@ each:
   - PRONOUN
 fan:
   - NOUN
+  - VERB
 fear:
   - NOUN
 fun:
@@ -906,6 +916,7 @@ spoke:
 spring:
   - VERB
 stand:
+  - NOUN
   - VERB
 table:
   - NOUN
@@ -3872,7 +3883,8 @@ thunder:
 thus:
   - ADVERB
 thy:
-  - NOUN
+  - ADJECTIVE
+  - POSSESSIVE_PRONOUN
 ticket:
   - NOUN
 tide:

@@ -36,6 +36,13 @@ PRONOUN:
     that), interrogative (who?, what?), and demonstrative (this, that).
   source: Reed & Kellogg, Higher Lessons in English
 
+POSSESSIVE_PRONOUN:
+  description: >
+    A possessive pronoun. Some forms stand substantively in place of a
+    noun (mine, yours); others are used adjectivally before a noun
+    (my, your, his, her, its, our, their).
+  source: Reed & Kellogg, Higher Lessons in English
+
 VERB:
   description: >
     A word that asserts action, being, or state of being. The core

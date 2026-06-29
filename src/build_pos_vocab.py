@@ -45,10 +45,8 @@ PRONOUNS = {
     "i", "you", "he", "she", "it", "we", "they",
     # Personal object
     "me", "him", "her", "us", "them",
-    # Possessive (pronoun form)
+    # Possessive (substantive pronoun form)
     "mine", "yours", "his", "hers", "ours", "theirs",
-    # Possessive (adjective form -- Reed-Kellogg treats as pronoun)
-    "my", "your", "our", "their", "its",
     # Demonstrative
     "this", "these", "those",
     # Relative / interrogative
@@ -63,6 +61,10 @@ PRONOUNS = {
     "whoever", "whatever",
     "each", "other", "another",
     "none", "both",
+}
+
+POSSESSIVE_PRONOUN_ADJECTIVES = {
+    "my", "your", "his", "her", "its", "our", "their", "thy",
 }
 
 ADVERBS = {
@@ -516,6 +518,8 @@ def classify_token(
         return [("CONJUNCTION", 1.0)]
     if word in PREPOSITIONS:
         return [("PREPOSITION", 1.0)]
+    if word in POSSESSIVE_PRONOUN_ADJECTIVES:
+        return [("ADJECTIVE", 1.0), ("POSSESSIVE_PRONOUN", 1.0)]
     if word in PRONOUNS:
         return [("PRONOUN", 1.0)]
     if word in ADVERBS:
