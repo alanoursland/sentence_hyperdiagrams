@@ -83,7 +83,23 @@ ARTICLE:
 SUBJECT:
   description: >
     Names that of which something is thought. The subject with all
-    its modifiers is the modified (or logical) subject.
+    its modifiers is the modified (or logical) subject. In this
+    ontology, SUBJECT is the general Reed-Kellogg concept; concrete
+    annotation may use SIMPLE_SUBJECT or COMPOUND_SUBJECT.
+  source: Reed & Kellogg, Higher Lessons in English
+
+SIMPLE_SUBJECT:
+  description: >
+    A subject consisting of one subject head, with any attached
+    modifiers included in the subject constituent. This is the
+    non-compound case of the Reed-Kellogg subject.
+  source: Reed & Kellogg, Higher Lessons in English
+
+COMPOUND_SUBJECT:
+  description: >
+    A subject made of two or more subject elements of equal rank,
+    connected by a conjunction expressed or understood. This is the
+    subject-specific form of Reed-Kellogg's compound construction.
   source: Reed & Kellogg, Higher Lessons in English
 
 PREDICATE:
@@ -251,8 +267,42 @@ COMPOUND_SENTENCE:
 # Punctuation (leaf labels)
 # ============================================================
 
-PUNCT:
+PERIOD:
   description: >
-    A punctuation mark. Period, comma, question mark, exclamation
-    point, semicolon, colon, dash, quotation marks, etc.
+    A "."
+  source: General convention
+
+COMMA:
+  description: >
+    A ","
+  source: General convention
+
+QUESTION_MARK:
+  description: >
+    A "?"
+  source: General convention
+
+EXCLAMATION_POINT:
+  description: >
+    A "!"
+  source: General convention
+
+SEMICOLON:
+  description: >
+    A ";"
+  source: General convention
+
+COLON:
+  description: >
+    A ":"
+  source: General convention
+
+DOUBLE_QUOTE:
+  description: >
+    A "\""
+  source: General convention
+
+SINGLE_QUOTE:
+  description: >
+    A "'"
   source: General convention

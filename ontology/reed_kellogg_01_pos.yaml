@@ -6,11 +6,23 @@
 # Edit manually to add/correct POS tags.
 
 ".":
-  - PUNCT
+  - PERIOD
+",":
+  - COMMA
+"?":
+  - QUESTION_MARK
+"!":
+  - EXCLAMATION_POINT
+";":
+  - SEMICOLON
+":":
+  - COLON
+"\"":
+  - DOUBLE_QUOTE
+"''":
+  - SINGLE_QUOTE
 the:
   - ARTICLE
-",":
-  - PUNCT
 a:
   - ARTICLE
 and:
@@ -19,16 +31,12 @@ to:
   - PREPOSITION
 he:
   - PRONOUN
-"?":
-  - PUNCT
 was:
   - VERB
 you:
   - PRONOUN
 it:
   - PRONOUN
-"!":
-  - PUNCT
 in:
   - PREPOSITION
 of:
@@ -148,8 +156,6 @@ would:
 up:
   - ADVERB: 0.6
   - PREPOSITION: 0.4
-";":
-  - PUNCT
 very:
   - ADVERB
 day:
@@ -1273,8 +1279,6 @@ wrong:
   - ADVERB: 0.2
 yellow:
   - ADJECTIVE
-":":
-  - PUNCT
 above:
   - PREPOSITION
 act:
