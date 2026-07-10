@@ -270,6 +270,24 @@ def test_rule_weight_defaults_to_one():
     assert rule.weight == 1.0
 
 
+def test_rule_confidence_is_bounded_by_weakest_matched_label():
+    anns = [
+        TokenAnnotation(
+            index=0,
+            token="run",
+            labels=[Label("VERB", weight=0.8), Label("NOUN", weight=0.2)],
+        ),
+    ]
+
+    emitted = Rule(emit="SIMPLE_SUBJECT", pattern="NOUN", weight=0.5).apply_at(
+        anns, 0
+    )
+
+    assert emitted is not None
+    assert emitted.name == "SIMPLE_SUBJECT"
+    assert emitted.weight == 0.1
+
+
 def test_apply_rules_makes_emitted_labels_visible_to_later_rules():
     anns = [
         TokenAnnotation(index=0, token="Ann", labels=[Label("NOUN")]),

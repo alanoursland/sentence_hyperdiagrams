@@ -111,9 +111,10 @@ interrogative form of:
 Ann has a hat.
 ```
 
-This probably needs clause-pattern context, not just a local object-complement
-rule. A sentence-initial finite verb can make the following nominal the subject
-instead of the object.
+The primitive object rule now requires an established subject to the left of
+the predicate verb. This prevents the false object label, and the canonical
+gold corpus locks in that negative behavior. The rule does not yet recover
+`Ann` as the inverted subject; that still needs interrogative/clause context.
 
 ## Compound sentences versus compound subjects
 

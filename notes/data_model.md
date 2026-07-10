@@ -74,6 +74,11 @@ are preferred when constructing linking labels in code.
 | `parameter`  | Optional 8-bit value (0-255) for ordinal variants of `name` |
 | `weight`     | Confidence or strength of this label                     |
 
+Weights below `1.0` mark alternative hypotheses. Rules may match them, but the
+emitted label receives the rule weight multiplied by the weakest matched label
+weight. Multiple labels with weight `1.0` are simultaneous co-labels rather
+than mutually exclusive alternatives.
+
 ### Constraints
 
 - A label is always attached to exactly one token.

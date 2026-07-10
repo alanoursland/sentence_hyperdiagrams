@@ -89,6 +89,7 @@ class MatchState:
     index: int
     captures: tuple[LabelInstance, ...] = ()
     child_curr: LabelInstance | None = None
+    matched_labels: tuple[LabelInstance, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -98,6 +99,7 @@ class MatchResult:
     matched: bool
     child_curr: LabelInstance | None = None
     captures: tuple[LabelInstance, ...] = ()
+    matched_labels: tuple[LabelInstance, ...] = ()
     left_index_after_match: int | None = None
 
     @property
@@ -143,16 +145,21 @@ class Rule:
         if not result.matched or result.child_curr is None:
             return None
 
+        premise_weight = min(
+            (instance.label.weight for instance in result.matched_labels),
+            default=1.0,
+        )
+        emitted_weight = self.weight * premise_weight
         child_prev = result.child_prev
         if child_prev is None:
-            return Label(name=self.emit, weight=self.weight)
+            return Label(name=self.emit, weight=emitted_weight)
 
         return Label(
             name=self.emit,
             child_prev=child_prev.name,
             child_curr=result.child_curr.name,
             index_prev=child_prev.token_index,
-            weight=self.weight,
+            weight=emitted_weight,
         )
 
 
@@ -179,6 +186,7 @@ def match_pattern(
             matched=True,
             child_curr=next_state.child_curr,
             captures=next_state.captures,
+            matched_labels=next_state.matched_labels,
             left_index_after_match=next_state.index,
         )
     return MatchResult(matched=False)
@@ -465,6 +473,7 @@ def _match_element(
                         index=matched_state.index,
                         captures=matched_state.captures + (capture,),
                         child_curr=matched_state.child_curr,
+                        matched_labels=matched_state.matched_labels,
                     )
                 )
         return captured
@@ -482,6 +491,7 @@ def _match_element(
                     index=instance.span.left - 1,
                     captures=state.captures,
                     child_curr=child_curr,
+                    matched_labels=state.matched_labels + (instance,),
                 )
             )
         return results
@@ -495,6 +505,7 @@ def _match_element(
                 index=state.index - 1,
                 captures=state.captures,
                 child_curr=state.child_curr,
+                matched_labels=state.matched_labels,
             )
         ]
 

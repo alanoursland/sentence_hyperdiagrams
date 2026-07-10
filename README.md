@@ -105,3 +105,20 @@ question from different directions: what is the structure of language?
 The early reader corpus contains ~2,000 sentences from four public-domain
 19th-century textbooks (Project Gutenberg), escalating from "A cat and a rat."
 to narrative with dialogue and causation. See `data/early_reader/README.md`.
+
+## Gold evaluation
+
+`gold/reed_kellogg/` contains 36 manually reviewed sentences covering the
+currently executable POS and primitive constructions, including explicit
+negative and weighted-ambiguity cases. Compare a generated pass with gold via:
+
+```powershell
+$env:PYTHONPATH='src'
+python src/compare_gold.py --gold gold/reed_kellogg/primitives.txt `
+  --generated gold/reed_kellogg/generated_primitives.txt `
+  --context gold/reed_kellogg/pos.txt
+```
+
+The report includes precision, recall, missing labels, extra labels, and
+invalid references. Generated labels below weight `1.0` are excluded by
+default; pass `--min-weight 0` to inspect every hypothesis.

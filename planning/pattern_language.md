@@ -216,6 +216,18 @@ A rule wraps a pattern and an emitted label:
 
 `weight` defaults to `1.0`.
 
+Weights represent hypothesis confidence. Every matched label remains visible
+to rules, but an emitted label receives:
+
+    rule weight * minimum(weight of every matched label)
+
+The minimum policy makes the weakest premise bound the conclusion without
+penalizing longer constituents merely for having more parts. Literal tokens
+and sentinels have implicit weight `1.0`. Multiple unweighted labels on one
+token are simultaneous co-labels; labels with weights below `1.0` are
+alternatives. Gold comparison uses a configurable minimum-weight threshold and
+defaults to `1.0`.
+
 ### MatchResult
 
 A successful match should return:
@@ -223,6 +235,7 @@ A successful match should return:
     matched: bool
     child_curr: LabelInstance
     captures: list[LabelInstance]
+    matched_labels: list[LabelInstance]
     left_index_after_match: int
 
 The emitted label uses:

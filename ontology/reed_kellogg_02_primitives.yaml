@@ -119,8 +119,9 @@ rules:
   - emit: SIMPLE_SUBJECT
     pattern: 'SIMPLE_SUBJECT CONJUNCTION NOUN'
 
-  # A second subject after a conjunction forms a compound subject with the
-  # previous subject.
+  # A noun projection after a conjunction forms a compound subject with the
+  # previous simple subject. The current NOUN is used directly so its full
+  # modifier span is consumed.
   #
   # Example:
   #   1 cat
@@ -131,12 +132,13 @@ rules:
   #   4 rat
   #     NOUN NOUN ARTICLE 3
   #     SIMPLE_SUBJECT
-  #     COMPOUND_SUBJECT SIMPLE_SUBJECT SIMPLE_SUBJECT 1
+  #     COMPOUND_SUBJECT NOUN SIMPLE_SUBJECT 1
   - emit: COMPOUND_SUBJECT
-    pattern: '@SIMPLE_SUBJECT CONJUNCTION SIMPLE_SUBJECT'
+    pattern: '@SIMPLE_SUBJECT CONJUNCTION NOUN'
 
-  # A noun projection after a verb or verb phrase forms a simple object
-  # complement.
+  # A noun projection after the predicate verb of an established subject forms
+  # a simple object complement. Requiring the subject context prevents the
+  # inverted interrogative "Has Ann a hat?" from treating Ann as an object.
   #
   # Example:
   #   14 has
@@ -148,17 +150,17 @@ rules:
   #     NOUN NOUN ARTICLE 15
   #     SIMPLE_OBJECT_COMPLEMENT
   - emit: SIMPLE_OBJECT_COMPLEMENT
-    pattern: '(VERB|VERB_PHRASE) NOUN'
+    pattern: '(SIMPLE_SUBJECT|COMPOUND_SUBJECT) (VERB|VERB_PHRASE) NOUN'
 
   # A noun projection after a conjunction can be another simple object
   # complement when the left side is already a simple object complement.
   - emit: SIMPLE_OBJECT_COMPLEMENT
     pattern: 'SIMPLE_OBJECT_COMPLEMENT CONJUNCTION NOUN'
 
-  # A second object complement after a conjunction forms a compound object
-  # complement with the previous object complement.
+  # A noun projection after a conjunction forms a compound object complement
+  # with the previous simple object, preserving the current noun's full span.
   - emit: COMPOUND_OBJECT_COMPLEMENT
-    pattern: '@SIMPLE_OBJECT_COMPLEMENT CONJUNCTION SIMPLE_OBJECT_COMPLEMENT'
+    pattern: '@SIMPLE_OBJECT_COMPLEMENT CONJUNCTION NOUN'
 
   # A noun projection after a preposition forms the simple principal of a
   # prepositional phrase.
@@ -177,7 +179,7 @@ rules:
   - emit: SIMPLE_PREPOSITIONAL_PRINCIPAL
     pattern: 'SIMPLE_PREPOSITIONAL_PRINCIPAL CONJUNCTION NOUN'
 
-  # A second prepositional principal after a conjunction forms a compound
-  # prepositional principal with the previous prepositional principal.
+  # A noun projection after a conjunction forms a compound prepositional
+  # principal with the previous principal, preserving its full modifier span.
   - emit: COMPOUND_PREPOSITIONAL_PRINCIPAL
-    pattern: '@SIMPLE_PREPOSITIONAL_PRINCIPAL CONJUNCTION SIMPLE_PREPOSITIONAL_PRINCIPAL'
+    pattern: '@SIMPLE_PREPOSITIONAL_PRINCIPAL CONJUNCTION NOUN'
