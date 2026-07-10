@@ -1,11 +1,13 @@
 # Sentence Hyperdiagrams
 
-Manual linguistic annotation of natural language text using a uniform
-mechanism that spans syntax, semantics, and discourse.
+Linguistic annotation of natural language text using a uniform mechanism that
+spans syntax, semantics, and discourse. Humans define and review the ontology
+and annotations; deterministic lexical maps and pattern transforms can produce
+explicit, traceable annotation proposals.
 
 ## Approach
 
-A **label** is a tuple `[name, child_prev, child_curr, index_prev, parameter, weight]`
+A **label** is a tuple `[name, child_curr, child_prev, index_prev, parameter, weight]`
 attached to a single token. Each label creates a tree node by linking a label
 on the current token to a label on a previous token. Tokens are labels without
 children.
@@ -19,8 +21,22 @@ of relation names where semantics is syntax, refined. AGENT is a kind of
 NOUN_PHRASE. ACT-ON is a kind of VERB. The same hierarchy works for both
 analysis (decomposing text) and generation (composing text).
 
-Hand-crafted from classical linguistics and knowledge representation
-research. No machine learning. No statistical inference.
+The ontology and rules are hand-crafted from classical linguistics and
+knowledge representation research. There is no model training or statistical
+inference. Generated passes are deterministic proposals, not automatically
+trusted ground truth.
+
+## Label conventions
+
+- General labels such as `SUBJECT`, `PREDICATE`, and `OBJECT_COMPLEMENT` are
+  abstract ontology categories. Concrete annotation passes emit `SIMPLE_*` or
+  `COMPOUND_*` labels.
+- `NOUN` intentionally serves as both a lexical leaf label and a recursive
+  linking label for nominal projection. This lets later rules consume one
+  stable label regardless of how many pre-head modifiers were absorbed.
+- General categories remain documented for classification and dependency
+  planning; they are emitted only if a future pass explicitly defines a
+  concrete use for them.
 
 ## Project structure
 
@@ -52,6 +68,16 @@ reference/              Ontology sources (PDFs gitignored, READMEs + download sc
   longman_ldoce/        Defining vocabulary (~2,000 words)
   opencyc/              Upper ontology
 ```
+
+The executable annotation path is:
+
+```text
+sentence files -> tokenized diagrams -> POS pass -> structural proposal passes
+```
+
+`src/apply_labels.py` applies both lexical and rule transforms. Transform
+metadata lives under the YAML `metadata` key, separate from lexical vocabulary
+entries.
 
 ## Ontology sources
 

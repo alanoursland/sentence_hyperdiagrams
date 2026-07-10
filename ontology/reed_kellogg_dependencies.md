@@ -1,17 +1,22 @@
 # Reed-Kellogg Label Dependencies
 
-This note sketches dependencies among labels in `reed_kellogg.yaml`.
-It is not a grammar. It is a compact planning view for ordering annotation
-passes and deciding which labels can be derived from earlier labels.
+This note explains dependencies among labels in `reed_kellogg.yaml`.
+It is not a grammar. The normative machine-readable relationships are in
+`reed_kellogg_dependencies.yaml`; this document provides rationale, examples,
+and a compact planning view for annotation pass ordering.
 
 ## Edge convention
 
-`LABEL <- A, B` means `LABEL` depends on, contains, or refines `A` and `B`.
+`LABEL <- A, B` in the explanatory shorthand below means that `LABEL` is
+related to `A` and `B` by specialization or construction.
 
-Two kinds of dependency are mixed deliberately:
+The YAML separates the two kinds of relationship:
 
-- `is-a`: a label is a narrower form of another label.
-- `builds-from`: a label is a constituent built from other labels.
+- `is_a`: a label is a narrower form of another label.
+- `builds_from`: a label is a constituent built from other labels.
+
+They are combined only in this document's compact prose notation; code must
+consume the distinct YAML mappings.
 
 ## Is the graph a DAG?
 

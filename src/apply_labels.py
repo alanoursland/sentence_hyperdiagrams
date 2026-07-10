@@ -1,18 +1,25 @@
 """Apply a label YAML file to a diagram pass.
 
-Supports two YAML shapes:
+Supports two YAML shapes. Transform metadata is always isolated from lexical
+entries so ordinary words such as ``pass`` cannot be mistaken for metadata:
 
 1. Lexical maps such as reed_kellogg_01_pos.yaml:
 
-       cat:
-         - NOUN
-       run:
-         - VERB: 0.8
-         - NOUN: 0.2
+       metadata:
+         type: lexical
+         output_pass: pos
+       vocabulary:
+         cat:
+           - NOUN
+         run:
+           - VERB: 0.8
+           - NOUN: 0.2
 
 2. Pattern transforms such as reed_kellogg_02_primitives.yaml:
 
-       pass: primitives
+       metadata:
+         type: rules
+         output_pass: primitives
        rules:
          - emit: SIMPLE_SUBJECT
            pattern: '(BOF|"."|"?"|"!") @ARTICLE? (NOUN|PRONOUN)'
@@ -51,11 +58,23 @@ def is_rule_transform(data: dict[str, Any]) -> bool:
     return "rules" in data
 
 
+def transform_metadata(data: dict[str, Any]) -> dict[str, Any]:
+    """Return isolated transform metadata, validating its shape."""
+    metadata = data.get("metadata", {})
+    if not isinstance(metadata, dict):
+        raise ValueError("Label YAML metadata must be a mapping")
+    return metadata
+
+
 def load_lexical_map(data: dict[str, Any]) -> dict[str, list[tuple[str, float]]]:
     """Load a word -> [(label, weight)] mapping from POS-style YAML data."""
     vocab: dict[str, list[tuple[str, float]]] = {}
 
-    for word, entries in data.items():
+    raw_vocab = data.get("vocabulary", data)
+    if not isinstance(raw_vocab, dict):
+        raise ValueError("Lexical label YAML vocabulary must be a mapping")
+
+    for word, entries in raw_vocab.items():
         if not isinstance(entries, list):
             continue
 
@@ -156,15 +175,18 @@ def build_metadata(
     data: dict[str, Any],
 ) -> dict[str, str]:
     """Build output pass metadata."""
-    pass_name = str(data.get("output_pass") or data.get("pass") or "labels")
+    transform = transform_metadata(data)
+    pass_name = str(
+        transform.get("output_pass") or transform.get("pass") or "labels"
+    )
     metadata = {
         "pass": pass_name,
         "source": str(input_path),
         "labels": str(labels_path),
         "generated_by": "src/apply_labels.py",
     }
-    if "ontology" in data:
-        metadata["ontology"] = str(data["ontology"])
+    if "ontology" in transform:
+        metadata["ontology"] = str(transform["ontology"])
     return metadata
 
 

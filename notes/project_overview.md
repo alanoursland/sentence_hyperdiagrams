@@ -2,10 +2,11 @@
 
 ## What this project is
 
-Sentence Hyperdiagrams is a system for manually annotating natural language
+Sentence Hyperdiagrams is a system for annotating natural language
 text with rich linguistic structure — from surface syntax through deep
 semantics and long-distance relationships — using a single, uniform
-annotation mechanism called **labels**.
+annotation mechanism called **labels**. Annotations may be written manually or
+proposed by explicit deterministic transforms for human review.
 
 The project distills existing human knowledge about language (linguistics,
 semantics, ontology) into a formal annotation scheme. There is no machine
@@ -41,11 +42,11 @@ thought) and generation (composing parts of thought into text).
 
 Every annotation is a **label** — a tuple attached to a single token:
 
-    [name, child_curr, child_prev, index_prev, parameter]
+    [name, child_curr, child_prev, index_prev, parameter, weight]
 
-Each label creates a binary tree node by linking a label on the current token
-to a label on a previous token. Tokens themselves are labels without children
-(leaf nodes). See `data_model.md` for the full specification.
+Each linking label creates a binary tree node by joining a label on the
+current token to a label on a previous token. Tokens themselves are labels
+without children (leaf nodes). See `data_model.md` for the full specification.
 
 This mechanism is deliberately minimal. Its power comes from the **ontology**
 — the set of label names and what they mean.
@@ -130,7 +131,8 @@ hand annotation, precise FSM grammars, and clean transformer learning.
 ## What this project is not
 
 - Not a machine learning system. No training, no models, no gradients.
-- Not a parser. It does not process text automatically.
+- Not a statistical or opaque parser. Its deterministic transforms generate
+  inspectable annotation proposals from named lexical entries and rules.
 - Not a new linguistic theory. It distills existing knowledge from classical
   NLP, formal semantics, and knowledge representation into a practical
   annotation format.

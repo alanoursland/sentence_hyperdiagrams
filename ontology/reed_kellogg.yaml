@@ -10,6 +10,14 @@
 #
 # This is a dictionary, not a grammar. It does not constrain which labels
 # can parent which. See planning/ontology_design.md.
+#
+# Canonical annotation convention:
+# - General role labels such as SUBJECT, PREDICATE, OBJECT_COMPLEMENT,
+#   ATTRIBUTE_COMPLEMENT, and PREPOSITIONAL_PRINCIPAL are abstract ontology
+#   categories. Concrete passes emit their SIMPLE_* or COMPOUND_* subtypes.
+# - NOUN is the intentional exception to leaf/linking separation: a bare NOUN
+#   is a lexical POS label, while a linking NOUN recursively extends the
+#   nominal projection with articles, adjectives, and possessive modifiers.
 
 # ============================================================
 # Parts of Speech (leaf labels — tag the token directly)

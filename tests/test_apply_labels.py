@@ -1,9 +1,12 @@
 """Tests for the generic apply_labels command helpers."""
 
+from pathlib import Path
+
 from parts_of_thought.diagram import Label, TokenAnnotation
 from apply_labels import (
     apply_lexical_map,
     apply_rule_transform,
+    build_metadata,
     labels_for_token,
     load_lexical_map,
     load_rules,
@@ -20,6 +23,24 @@ def test_load_lexical_map_supports_weighted_entries():
         "run": [("VERB", 0.8), ("NOUN", 0.2)],
         ".": [("PERIOD", 1.0)],
     }
+
+
+def test_lexical_metadata_is_separate_from_word_named_pass():
+    data = {
+        "metadata": {
+            "type": "lexical",
+            "output_pass": "pos",
+            "ontology": "reed_kellogg",
+        },
+        "vocabulary": {
+            "pass": ["VERB"],
+        },
+    }
+
+    assert load_lexical_map(data) == {"pass": [("VERB", 1.0)]}
+    assert build_metadata(
+        Path("ontology/pos.yaml"), Path("tokens.txt"), data
+    )["pass"] == "pos"
 
 
 def test_labels_for_unknown_token():

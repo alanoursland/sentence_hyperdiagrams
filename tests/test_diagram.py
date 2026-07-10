@@ -21,6 +21,12 @@ from parts_of_thought.diagram import (
 # -- Label --
 
 class TestLabel:
+    def test_positional_order_matches_serialized_order(self):
+        label = Label("NOUN_PHRASE", "NOUN", "DET", 0)
+        assert label.child_curr == "NOUN"
+        assert label.child_prev == "DET"
+        assert label.to_line() == "NOUN_PHRASE NOUN DET 0"
+
     def test_leaf_label(self):
         label = Label(name="DET")
         assert label.is_leaf

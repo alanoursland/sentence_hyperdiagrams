@@ -1,7 +1,8 @@
-# pass: ['VERB']
+# pass: pos
 # source: diagrams\tokenized\mcguffey_primer.txt
 # labels: ontology\reed_kellogg_01_pos.yaml
 # generated_by: src/apply_labels.py
+# ontology: reed_kellogg
 
 0 A
   ARTICLE

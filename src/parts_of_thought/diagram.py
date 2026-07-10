@@ -21,8 +21,8 @@ class Label:
     """
 
     name: str
-    child_prev: str | None = None
     child_curr: str | None = None
+    child_prev: str | None = None
     index_prev: int | None = None
     parameter: int = 0
     weight: float = 1.0

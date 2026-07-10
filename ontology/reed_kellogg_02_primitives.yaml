@@ -5,8 +5,9 @@
 # SUBJECT and PREDICATE. They are the first structural constituents built from
 # POS labels.
 #
-# This is a rule proposal file, not executable code yet. The pattern language
-# is intentionally small and right-to-left:
+# This is an executable rule transform. Generated labels are proposals that
+# require validation or human review; the pattern language is intentionally
+# small and right-to-left:
 #
 #   RULES RUN LEFT TO RIGHT OVER TOKENS.
 #   EACH PATTERN MATCHES RIGHT TO LEFT FROM THE CURRENT TOKEN.
@@ -33,11 +34,12 @@
 # engine can distinguish terminal periods from abbreviation periods before these
 # patterns are trusted on broader text.
 
-pass: primitives
-ontology: reed_kellogg
-input_passes:
-  - pos
-output_pass: primitives
+metadata:
+  type: rules
+  ontology: reed_kellogg
+  input_passes:
+    - pos
+  output_pass: primitives
 
 labels:
   - NOUN

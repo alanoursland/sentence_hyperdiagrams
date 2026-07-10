@@ -62,6 +62,10 @@ together or not at all — you can't specify one without the others.
 token where this label is attached. `child_prev` is the linked label at
 `index_prev`.
 
+The Python `Label` dataclass follows the same positional order:
+`name, child_curr, child_prev, index_prev, parameter, weight`. Keyword
+arguments are preferred for linking labels.
+
 ## Comments and metadata
 
 Lines starting with `#` are comments. Blank lines are ignored.
