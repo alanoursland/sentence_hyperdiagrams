@@ -22,6 +22,20 @@ NOUN:
     or a quality, is named by a noun."
   source: Reed & Kellogg, Higher Lessons in English
 
+COMMON_NOUN:
+  description: >
+    A name which belongs in common to all things of a class — cat,
+    city, river. Includes collective nouns (crowd, family) and
+    abstract nouns (goodness, height).
+  source: Reed & Kellogg, Higher Lessons in English
+
+PROPER_NOUN:
+  description: >
+    The particular name of an individual, distinguishing it from
+    others of its class — Ann, Tom, May, Boston. Begins with a
+    capital letter.
+  source: Reed & Kellogg, Higher Lessons in English
+
 POSSESSIVE_NOUN:
   description: >
     A noun in the possessive case, typically used as a possessive
@@ -43,10 +57,71 @@ POSSESSIVE_PRONOUN:
     (my, your, his, her, its, our, their).
   source: Reed & Kellogg, Higher Lessons in English
 
+PERSONAL_PRONOUN:
+  description: >
+    A pronoun that by its form denotes the speaker, the one spoken
+    to, or the one spoken of. I, you, he, she, it, we, they, and
+    their case forms.
+  source: Reed & Kellogg, Higher Lessons in English
+
+COMPOUND_PERSONAL_PRONOUN:
+  description: >
+    A personal pronoun compounded with -self or -selves (myself,
+    yourself, himself, themselves), used either for emphasis or to
+    reflect the action back upon the actor.
+  source: Reed & Kellogg, Higher Lessons in English
+
+RELATIVE_PRONOUN:
+  description: >
+    A pronoun that relates to some preceding word or words (its
+    antecedent) while connecting a dependent clause to the word the
+    clause modifies. Who, which, that, what.
+  source: Reed & Kellogg, Higher Lessons in English
+
+COMPOUND_RELATIVE_PRONOUN:
+  description: >
+    A relative pronoun of the form whoever, whosoever, whichever,
+    whatever. The antecedent is indefinite or contained within the
+    pronoun itself.
+  source: Reed & Kellogg, Higher Lessons in English
+
+INTERROGATIVE_PRONOUN:
+  description: >
+    A pronoun with which a question is asked. Who?, which?, what?.
+  source: Reed & Kellogg, Higher Lessons in English
+
 VERB:
   description: >
     A word that asserts action, being, or state of being. The core
     of the predicate.
+  source: Reed & Kellogg, Higher Lessons in English
+
+TRANSITIVE_VERB:
+  description: >
+    A verb that requires an object. The action passes over from the
+    doer to the receiver. "Cornwallis surrendered his sword."
+  source: Reed & Kellogg, Higher Lessons in English
+
+INTRANSITIVE_VERB:
+  description: >
+    A verb that does not require an object. Asserts action complete
+    in itself, or being, or state of being. "The wind blows."
+  source: Reed & Kellogg, Higher Lessons in English
+
+COPULA:
+  description: >
+    The asserting word that links an attribute complement to the
+    subject without itself expressing the attribute — chiefly the
+    verb "to be" as a mere link (is, are, was, seems, became). Reed &
+    Kellogg borrow the term from logic: "the asserting word is called
+    the copula — it shows that the two ideas are put together."
+  source: Reed & Kellogg, Higher Lessons in English
+
+AUXILIARY_VERB:
+  description: >
+    A verb that helps in the conjugation of other verbs (be, have,
+    do, may, can, must, might, shall, will, and their forms). In a
+    verb phrase the first auxiliary is the asserting word.
   source: Reed & Kellogg, Higher Lessons in English
 
 ADJECTIVE:
@@ -56,11 +131,32 @@ ADJECTIVE:
     specifies number (five, some, many, all).
   source: Reed & Kellogg, Higher Lessons in English
 
+DESCRIPTIVE_ADJECTIVE:
+  description: >
+    An adjective that modifies by expressing quality — ripe, cold,
+    beautiful, wise.
+  source: Reed & Kellogg, Higher Lessons in English
+
+DEFINITIVE_ADJECTIVE:
+  description: >
+    An adjective that modifies by pointing out, numbering, or
+    denoting quantity — this, that, yonder, five, some, many, all.
+    Articles are definitive adjectives.
+  source: Reed & Kellogg, Higher Lessons in English
+
 ADVERB:
   description: >
     A word used to modify a verb, an adjective, or another adverb.
     Tells manner (quietly), time (now, early), place (here, there),
     or degree (very, almost, quite).
+  source: Reed & Kellogg, Higher Lessons in English
+
+CONJUNCTIVE_ADVERB:
+  description: >
+    An adverb that, in addition to its office as a modifier, connects
+    clauses — taking the office of a conjunction upon itself. When,
+    where, while, whenever, than, as; also however, therefore,
+    nevertheless joining independent clauses.
   source: Reed & Kellogg, Higher Lessons in English
 
 PREPOSITION:
@@ -76,6 +172,22 @@ CONJUNCTION:
     (and, but, or) or subordinating (if, when, because, that).
   source: Reed & Kellogg, Higher Lessons in English
 
+COORDINATE_CONJUNCTION:
+  description: >
+    A conjunction that connects words, phrases, or clauses of the
+    same rank. Reed & Kellogg divide them into copulative (and, both
+    ... and), adversative (but, whereas), and alternative (or, nor,
+    either ... or, neither ... nor). Paired forms are called
+    correlatives.
+  source: Reed & Kellogg, Higher Lessons in English
+
+SUBORDINATE_CONJUNCTION:
+  description: >
+    A conjunction that connects clauses of different rank —
+    introducing a dependent clause. If, because, that, though,
+    unless, lest, whether.
+  source: Reed & Kellogg, Higher Lessons in English
+
 INTERJECTION:
   description: >
     A word used to express strong or sudden feeling. Grammatically
@@ -89,6 +201,47 @@ ARTICLE:
     adjectives, but they are distinguished here for annotation
     clarity.
   source: Reed & Kellogg (classified under adjective)
+
+# ============================================================
+# Verbals (participles and infinitives)
+# ============================================================
+#
+# Reed & Kellogg treat the participle and the infinitive as the two
+# non-asserting forms of the verb. They deliberately reject the term
+# "gerund": nounal -ing forms are participles used as nouns.
+
+PARTICIPLE:
+  description: >
+    A form of the verb partaking of the nature of an adjective or of
+    a noun, expressing the action or being as assumed, not asserted.
+    Commonly ends in -ing, -ed, or -en. Like other verb forms it may
+    take an object and adverb modifiers.
+  source: Reed & Kellogg, Higher Lessons in English
+
+ADJECTIVE_PARTICIPLE:
+  description: >
+    A participle used as an adjective modifier, sharing the nature of
+    the verb and that of the adjective. "Hearing the noise, the boy
+    turned." When the verbal nature is wholly lost ("singing birds")
+    the word is a mere adjective.
+  source: Reed & Kellogg, Higher Lessons in English
+
+NOUN_PARTICIPLE:
+  description: >
+    A participle used as a noun, naming the action — "The singing of
+    the birds delights us." May take adjective modifiers and a
+    possessive, yet keep its object. What other grammars call the
+    gerund or verbal noun; Reed & Kellogg argue at length for keeping
+    the name participle.
+  source: Reed & Kellogg, Higher Lessons in English
+
+INFINITIVE:
+  description: >
+    A form of the verb which names the action or being in a general
+    way, without asserting it of anything. Usually introduced by
+    "to"; the "to" is omitted after bid, dare, feel, hear, let, make,
+    need, and see. Used as a noun, an adjective, or an adverb.
+  source: Reed & Kellogg, Higher Lessons in English
 
 # ============================================================
 # Sentence elements (linking labels — connect other labels)
@@ -120,7 +273,25 @@ PREDICATE:
   description: >
     Tells what is thought of the subject. The predicate with all
     its modifiers and complements is the modified (or logical)
-    predicate.
+    predicate. In this ontology, PREDICATE is the general
+    Reed-Kellogg concept; concrete annotation may use
+    SIMPLE_PREDICATE or COMPOUND_PREDICATE.
+  source: Reed & Kellogg, Higher Lessons in English
+
+SIMPLE_PREDICATE:
+  description: >
+    A predicate consisting of one predicate verb or verb phrase,
+    with any attached modifiers and complements included in the
+    predicate constituent. This is the non-compound case of the
+    Reed-Kellogg predicate.
+  source: Reed & Kellogg, Higher Lessons in English
+
+COMPOUND_PREDICATE:
+  description: >
+    A predicate made of two or more predicate elements of equal
+    rank, connected by a conjunction expressed or understood,
+    sharing one subject. This is the predicate-specific form of
+    Reed-Kellogg's compound construction.
   source: Reed & Kellogg, Higher Lessons in English
 
 OBJECT_COMPLEMENT:
@@ -153,7 +324,26 @@ ATTRIBUTE_COMPLEMENT:
     Completes the predicate and presents a quality or class
     asserted of the subject. Follows a linking verb (is, seems,
     became). Includes what modern grammar calls the predicate
-    nominative (noun) and predicate adjective (adjective).
+    nominative (noun) and predicate adjective (adjective). In this
+    ontology, ATTRIBUTE_COMPLEMENT is the general Reed-Kellogg
+    concept; concrete annotation may use SIMPLE_ATTRIBUTE_COMPLEMENT
+    or COMPOUND_ATTRIBUTE_COMPLEMENT.
+  source: Reed & Kellogg, Higher Lessons in English
+
+SIMPLE_ATTRIBUTE_COMPLEMENT:
+  description: >
+    An attribute complement consisting of one complement head, with
+    any attached modifiers included in the complement constituent.
+    This is the non-compound case of the Reed-Kellogg attribute
+    complement.
+  source: Reed & Kellogg, Higher Lessons in English
+
+COMPOUND_ATTRIBUTE_COMPLEMENT:
+  description: >
+    An attribute complement made of two or more attribute elements
+    of equal rank, connected by a conjunction expressed or
+    understood. This is the attribute-complement-specific form of
+    Reed-Kellogg's compound construction.
   source: Reed & Kellogg, Higher Lessons in English
 
 OBJECTIVE_COMPLEMENT:
@@ -191,6 +381,23 @@ ADVERB_MODIFIER:
     A modifier that functions as an adverb — modifies a verb,
     adjective, or another adverb. May be a single adverb, a phrase,
     or a clause.
+  source: Reed & Kellogg, Higher Lessons in English
+
+POSSESSIVE_MODIFIER:
+  description: >
+    A noun or pronoun in the possessive case used as an adjective
+    modifier of another noun — "Solomon's temple." One of Reed &
+    Kellogg's two kinds of noun modifiers (the other being the
+    explanatory modifier). The word remains a noun; its use is
+    adjectival.
+  source: Reed & Kellogg, Higher Lessons in English
+
+EXPLANATORY_MODIFIER:
+  description: >
+    A noun modifier that identifies or explains by adding another
+    name of the same thing — "Dom Pedro, the emperor." Often called
+    an appositive. May be introduced by as, namely, to wit, that is.
+    Diagrammed in curves beside the word it explains.
   source: Reed & Kellogg, Higher Lessons in English
 
 # ============================================================
@@ -237,6 +444,44 @@ VERB_PHRASE:
     "may be learned," "could have been learning."
   source: Reed & Kellogg, Higher Lessons in English
 
+ADJECTIVE_PHRASE:
+  description: >
+    A phrase doing the office of an adjective — modifying a noun or
+    pronoun. Usually a prepositional phrase ("the house on the
+    hill"), but infinitive and participle phrases also serve.
+  source: Reed & Kellogg, Higher Lessons in English
+
+ADVERB_PHRASE:
+  description: >
+    A phrase doing the office of an adverb — modifying a verb, an
+    adjective, or an adverb. Usually a prepositional phrase ("sat by
+    the fire"), but infinitive phrases also serve.
+  source: Reed & Kellogg, Higher Lessons in English
+
+INFINITIVE_PHRASE:
+  description: >
+    An infinitive with its complements and modifiers. Used as a
+    noun (subject, complement, or object), as an adjective, as an
+    adverb, or independently — "To make a long story short, ..."
+  source: Reed & Kellogg, Higher Lessons in English
+
+PARTICIPLE_PHRASE:
+  description: >
+    A participle with its complements and modifiers. Serves an
+    adjectival office ("the boy, hearing the noise, turned") or a
+    nounal office ("fond of asking questions"). Reed & Kellogg's
+    term for what is now usually called a participial phrase.
+  source: Reed & Kellogg, Higher Lessons in English
+
+ABSOLUTE_PHRASE:
+  description: >
+    A noun or pronoun used independently with a modifying participle
+    — "His master being absent, the business was neglected." It
+    logically modifies the predicate but has no grammatical
+    connective, and so is grammatically independent (the nominative
+    absolute).
+  source: Reed & Kellogg, Higher Lessons in English
+
 # ============================================================
 # Compound structures (linking labels)
 # ============================================================
@@ -268,6 +513,71 @@ DEPENDENT_CLAUSE:
   description: >
     A clause used as an adjective, an adverb, or a noun. Cannot
     stand alone as a sentence.
+  source: Reed & Kellogg, Higher Lessons in English
+
+ADJECTIVE_CLAUSE:
+  description: >
+    A dependent clause doing the office of an adjective — modifying
+    a noun or pronoun. Connected by a relative pronoun (who, which,
+    that) or a conjunctive adverb (when, where, why). "The man that
+    is discreet."
+  source: Reed & Kellogg, Higher Lessons in English
+
+ADVERB_CLAUSE:
+  description: >
+    A dependent clause doing the work of an adverb. Reed & Kellogg
+    classify adverb clauses by meaning: time, place, degree, manner,
+    real cause, evidence, purpose, condition, and concession.
+  source: Reed & Kellogg, Higher Lessons in English
+
+NOUN_CLAUSE:
+  description: >
+    A dependent clause doing the office of a noun — as subject,
+    complement, object of a preposition, or explanatory modifier.
+    Introduced by that, if, whether, or by question words (what,
+    who, how, when, where, why).
+  source: Reed & Kellogg, Higher Lessons in English
+
+# ============================================================
+# Independent elements (linking labels)
+# ============================================================
+#
+# Words and phrases that have no grammatical connection with the
+# rest of the sentence (Higher Lessons, Lesson 44). In the diagram
+# an independent element stands by itself.
+
+INDEPENDENT_ELEMENT:
+  description: >
+    A word or phrase used with no grammatical connection to the rest
+    of the sentence. Reed & Kellogg's cases: independent by address,
+    by exclamation ("Poor man! he never came back"), by pleonasm
+    ("Thy rod and thy staff, they comfort me"), the absolute phrase,
+    independent infinitive and participle phrases ("to confess the
+    truth," "generally speaking"), independent adverbs (well, now,
+    why), interjections, and parenthetical matter.
+  source: Reed & Kellogg, Higher Lessons in English
+
+DIRECT_ADDRESS:
+  description: >
+    A noun or pronoun independent by address — naming the person or
+    thing spoken to, serving only to arrest attention. "The fault,
+    dear Brutus, is not in our stars." Also called the nominative of
+    address.
+  source: Reed & Kellogg, Higher Lessons in English
+
+EXPLETIVE:
+  description: >
+    An idiomatic word used merely to throw the subject after the
+    verb, the ordinary meaning having faded out — chiefly "there" in
+    "There are pitch-pine Yankees and white-pine Yankees." Diagrammed
+    standing by itself, apart from the sentence line.
+  source: Reed & Kellogg, Higher Lessons in English
+
+PARENTHETICAL:
+  description: >
+    An expression enclosed within marks of parenthesis (or set off
+    by dashes or commas) that is independent of the rest of the
+    sentence — "I stake my fame (and I had fame) upon this cast."
   source: Reed & Kellogg, Higher Lessons in English
 
 # ============================================================
