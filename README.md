@@ -44,6 +44,7 @@ trusted ground truth.
 notes/                  Project documentation
   data_model.md         Label tuple specification
   clib.md               Component Library foundation
+  transformer_connection.md  Hypothesis connecting labels to transformer state
   project_overview.md   Full project summary and sibling project connections
 
 data/

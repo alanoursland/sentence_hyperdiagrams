@@ -125,6 +125,12 @@ The hyperdiagrams provide **ground truth**. The FSM transducer provides a
 The regex transformer asks whether a **neural network** recovers equivalent
 structure internally.
 
+See `transformer_connection.md` for the precise working hypothesis: attention
+acts as a parallel weighted backward matcher and retriever, FFNs perform local
+nonlinear state closure, and the residual stream may carry distributed
+features corresponding to behaviorally useful hyperdiagram quotient states.
+This is an experimental proposal, not an established account of LLM internals.
+
 All three share the early reader dataset as common ground — simple enough for
 hand annotation, precise FSM grammars, and clean transformer learning.
 
